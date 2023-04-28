@@ -1,0 +1,318 @@
+$leftRight: 4%;
+$globalGap: 30px;
+$breakpoint-mobile: 750px;
+$breakpoint-tablet: 1000px;
+$breakpoint-desktop: 1440px;
+$boxShadow: 4.5px 4.5px 3.1px rgba(0, 0, 0, 0.024),
+  12.5px 12.5px 8.5px rgba(0, 0, 0, 0.035),
+  30.1px 30.1px 20.5px rgba(0, 0, 0, 0.046),
+  100px 100px 68px rgba(0, 0, 0, 0.07);
+@mixin TransparentText {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+@mixin Webkit {
+  &::-webkit-scrollbar {
+    height: 5px;
+    display: block;
+  }
+  &::-webkit-scrollbar-track {
+    border-radius: 5px;
+    background-color: #000000;
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: transparent;
+  }
+  &:hover::-webkit-scrollbar-thumb {
+    background-color: #b8b8b8;
+  }
+}
+@mixin Flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.HighlightHeader {
+  font-weight: 600;
+  font-size: clamp(2.125rem, 2.5rem, 3.25rem);
+  line-height: clamp(2.5rem, 3.75rem, 4.375rem);
+  color: #12273d;
+  @media (min-width: $breakpoint-desktop) {
+    font-size: clamp(3rem, 4rem, 5rem);
+    line-height: clamp(3rem, 4.4rem, 5.5rem);
+  }
+}
+
+.Headers {
+  font-weight: 700;
+  font-size: clamp(1.75rem, 2rem, 3.5rem);
+  line-height: clamp(1.1875rem, 2.375rem, 4.125rem);
+  color: #17324f;
+  @media (min-width: $breakpoint-desktop) {
+    font-size: clamp(2.5rem, 3.5rem, 4rem);
+    line-height: clamp(3rem, 4rem, 7rem);
+  }
+}
+.Paragraphs {
+  font-weight: 400;
+  font-family: "Roboto" sans-serif;
+  font-size: clamp(1.0625rem, 1.1875rem, 1.375rem);
+  line-height: clamp(1.625rem, 1.75rem, 2.0625rem);
+  letter-spacing: 0.03em;
+  color: #6a839f;
+  @media (min-width: $breakpoint-desktop) {
+    font-size: clamp(1.5rem, 2rem, 3rem);
+    line-height: clamp(2rem, 2.4rem, 2.8rem);
+  }
+}
+
+.Button {
+  all: unset;
+  font-weight: 600;
+  box-sizing: border-box;
+  font-size: clamp(0.875rem, 1rem, 1.25rem);
+  line-height: 0.875rem;
+  padding: 15px 20px;
+  text-align: center;
+  transition: all 300ms ease-out;
+  color: #ffffff;
+  cursor: pointer;
+  background: #17324f;
+  box-shadow: 0px 4px 20px rgba(24, 30, 36, 0.1);
+  border-radius: 4px;
+  height: 100%;
+  position: relative;
+  display: block;
+  border: 2px solid #17324f;
+  // @media (min-width: $breakpoint-tablet) {
+  //   font-size: clamp(1rem, 1.4rem, 2rem);
+  //   padding: 20px 25px;
+  // }
+  @media (min-width: $breakpoint-desktop) {
+    font-size: clamp(1.2rem, 1.8rem, 2.4rem);
+    padding: 25px 30px;
+  }
+}
+.OpposeButton {
+  background: #fafcfd;
+  box-shadow: 14px 22px 52px -12px rgba(127, 127, 127, 0.13);
+  border: 2px solid #17324f;
+  color: #17324f;
+}
+
+@mixin BOX($gap: $globalGap) {
+  @include Flex();
+  flex-direction: column;
+  gap: $gap;
+  align-items: flex-start;
+  @media (min-width: $breakpoint-desktop) {
+    gap: calc($gap + 30px);
+  }
+}
+@mixin PaddingBoxTopAndBottom($gap: $globalGap) {
+  padding-top: $gap;
+  padding-bottom: $gap;
+  @media (min-width: $breakpoint-tablet) {
+    padding-top: calc($gap + 15px);
+    padding-bottom: calc($gap + 15px);
+  }
+  @media (min-width: $breakpoint-desktop) {
+    padding-top: calc($gap + 30px);
+    padding-bottom: calc($gap + 30px);
+  }
+}
+@mixin Label {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.3125rem;
+  letter-spacing: 0.03em;
+  color: #3a3a3a;
+  width: min(100%, 300px);
+  position: relative;
+}
+.Input {
+  &::after {
+    content: attr(data-after);
+    position: absolute;
+    left: var(--left-offset);
+    font-size: x-large;
+    color: red;
+  }
+  @include Label();
+  span.before {
+    // margin: 0 !important;
+    margin-top: 12px;
+    // padding-top: 26px;
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    width: fit-content;
+    color: rgba(178, 180, 180, 1);
+    // height: 100%;
+    height: 40px;
+    border-right: 1px solid black;
+    padding-right: 3px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    gap: 5px;
+  }
+  span + input {
+    display: inline-block;
+    padding-left: 100px;
+  }
+  input {
+    all: unset;
+    box-sizing: border-box;
+    padding: 12px 10px;
+    border: 1px solid black;
+    cursor: text;
+    border-radius: 7px;
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  .file {
+    @include Flex();
+    border: 2.5px solid #e9edf1;
+    border-radius: 14px;
+    padding: 10px 1rem;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 4px;
+    span {
+      width: 70%;
+    }
+    i {
+      line-height: 1.4;
+      font-style: normal;
+      text-decoration: underline;
+      font-weight: 700;
+    }
+  }
+}
+.Span {
+  font-weight: 500;
+  font-size: clamp(0.9375rem, 1rem, 1.0625rem);
+  line-height: 150%;
+  color: #17324f;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+  @media (min-width: $breakpoint-tablet) {
+    font-size: clamp(1rem, 1.2rem, 1.65rem);
+  }
+  @media (min-width: $breakpoint-desktop) {
+    font-size: clamp(1.2rem, 1.5rem, 2rem);
+  }
+}
+.Radio {
+  all: unset;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+  .radio {
+    background: rgba(233, 237, 241, 0.2);
+    padding: 10px 15px;
+    border: 1.41644px solid #bac6d2;
+    border-radius: 5.24918px;
+    max-width: 250px;
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    cursor: pointer;
+    transition: all 300ms ease-out;
+    width: 100%;
+    &:hover {
+      background: rgba(233, 237, 241, 0.4);
+    }
+    label {
+      cursor: pointer;
+    }
+  }
+  @media (max-width: 700px) {
+    flex-direction: column;
+  }
+}
+
+.Selector {
+  @include Label();
+  .Filters {
+    background: none;
+    position: relative;
+    .filterCurrent {
+      cursor: pointer;
+      border-radius: 7px;
+      width: 100%;
+      padding: 0.2rem 0.5rem;
+      height: 40px;
+      // height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: none;
+      border: 1px solid rgb(0, 0, 0, 0.9);
+    }
+    .filter {
+      height: 300px;
+      overflow-y: auto;
+      border-radius: 7px;
+      position: absolute;
+      top: 0;
+      z-index: 5;
+      padding: 0.2rem 0;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      background: none;
+      background-color: rgba(13, 13, 13, 0.8);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgb(0, 0, 0, 0.9);
+      opacity: 1;
+      gap: 0.5rem;
+      width: 100%;
+      div {
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        // width: 200px;
+        width: 100%;
+        opacity: 0.8;
+        background: none;
+        cursor: pointer;
+        padding: 0.5rem 0.6rem;
+        transition: opacity 200ms ease-in;
+        &:hover {
+          opacity: 1;
+          background-color: rgba(13, 13, 13);
+        }
+      } /* Style for the scrollbar */
+      &::-webkit-scrollbar {
+        width: 5px;
+      }
+      /* Style for the scrollbar thumb */
+      &::-webkit-scrollbar-thumb {
+        background-color: #f2f2f2;
+        border-radius: 5px;
+      }
+      /* Style for the scrollbar track */
+      &::-webkit-scrollbar-track {
+        background-color: #1f202e;
+      }
+    }
+  }
+}
+
+.active {
+  background-color: #1f202e !important;
+  color: white;
+  opacity: 1 !important;
+}
