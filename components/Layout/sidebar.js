@@ -39,7 +39,7 @@ export default function Sidebar() {
       </div>
       <div className={styles.Links}>
         {urls.map((url) => (
-          <Link href={url.link}>
+          <Link href={url.link} key={url.link}>
             <a style={activeLink(url.link)}>{url.name}</a>
           </Link>
         ))}
