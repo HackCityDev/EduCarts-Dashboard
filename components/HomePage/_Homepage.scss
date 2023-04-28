@@ -1,0 +1,177 @@
+@use "../General/General.module.scss" as G;
+
+.UserPage {
+  .UserSection {
+    padding: G.$leftRight;
+    @media (max-width: G.$BP-mobile) {
+      padding-top: 10%;
+    }
+    .User {
+      .UserBox {
+        position: relative;
+        padding: G.$leftRight;
+        background: #12273d;
+        backdrop-filter: blur(25px);
+        border-radius: 20px;
+        height: 300px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        .Details {
+          width: calc(100% - 250px);
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          align-items: flex-start;
+          div {
+            font-size: 35px;
+          }
+        }
+        .UserPlaceholder {
+          position: absolute;
+          height: 350px;
+          width: 250px;
+          bottom: 0;
+          right: 0;
+        }
+        @media (max-width: G.$BP-mobile) {
+          height: 250px;
+          .Details {
+            div {
+              font-size: 25px;
+              line-height: 2rem;
+            }
+            p {
+              font-size: 16px;
+            }
+          }
+        }
+        @media (max-width: 550px) {
+          .Details {
+            width: calc(100% - 180px);
+          }
+          .UserPlaceholder {
+            width: 200px;
+            height: 300px;
+          }
+        }
+        @media (max-width: 473px) {
+          height: 200px;
+          .Details {
+            width: calc(100% - 130px);
+            gap: 5px;
+            div {
+              font-size: 20px;
+            }
+            p {
+              font-size: 14px;
+              line-height: 1.35rem;
+            }
+            button {
+              padding: 10px 15px;
+            }
+          }
+          .UserPlaceholder {
+            width: 150px;
+            height: 250px;
+          }
+        }
+        @media (max-width: 390px) {
+          height: 150px;
+          .Details {
+            width: calc(100% - 90px);
+            gap: 5px;
+            div {
+              font-size: 18px;
+            }
+            p {
+              font-size: 13px;
+              line-height: 1.3rem;
+            }
+            button {
+              padding: 7px 10px;
+              font-size: 0.7rem;
+            }
+          }
+          .UserPlaceholder {
+            width: 100px;
+            height: 200px;
+          }
+        }
+        @media (max-width: 360px) {
+          height: 130px;
+          .Details {
+            width: calc(100% - 70px);
+            gap: 2px;
+            div {
+              font-size: 16px;
+              line-height: 1.5rem;
+            }
+            p {
+              font-size: 12px;
+              line-height: 1.2rem;
+            }
+            button {
+              padding: 6px 8.5px;
+              font-size: 0.65rem;
+            }
+          }
+          .UserPlaceholder {
+            width: 80px;
+            height: 160px;
+          }
+        }
+      }
+    }
+  }
+  .TableSection {
+    @include G.Flex;
+    aside {
+      flex: 33.33%;
+      border-top: 0.5px solid #8a8b8b;
+      border-bottom: 0.5px solid #8a8b8b;
+    }
+    .ConvertFunds {
+      border-left: 0.5px solid #8a8b8b;
+    }
+    .RecentPayments {
+      .RecentPaymentsBox {
+        padding: 10% 0;
+        @include G.Flex;
+        gap: 1rem;
+      }
+    }
+  }
+}
+
+.Aside {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  padding-top: 10%;
+  gap: 10%;
+  align-items: center;
+  .document {
+    div {
+      border-radius: 230px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .doc1 {
+      background: #e7f2fe;
+      width: 300px;
+      height: 300px;
+      .doc2 {
+        background: #d5e9fd;
+        width: 250px;
+        height: 250px;
+        .doc3 {
+          background: #cbe4fd;
+          width: 180px;
+          height: 180px;
+        }
+      }
+    }
+  }
+}

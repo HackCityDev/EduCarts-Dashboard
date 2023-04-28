@@ -312,7 +312,6 @@
 }
 .Layout .LayoutNavbar {
   width: 100%;
-  padding: 0 4%;
 }
 @media (min-width: 1000px) {
   .Layout .LayoutNavbar {
@@ -327,6 +326,7 @@
   justify-content: center;
   align-items: center;
   width: 100%;
+  padding: 0 4%;
   gap: 10px;
   border-bottom: 1px solid #adb1b2;
 }
@@ -498,4 +498,486 @@
 .Sidebar .Footer .Logout span {
   color: #dd7076;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+}
+
+.HighlightHeader {
+  font-weight: 600;
+  font-size: 2.5rem;
+  line-height: 3.75rem;
+  color: #12273d;
+}
+
+@media (min-width: 1440px) {
+  .HighlightHeader {
+    font-size: 4rem;
+    line-height: 4.4rem;
+  }
+}
+.Headers {
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 2.375rem;
+  color: #17324f;
+}
+
+@media (min-width: 1440px) {
+  .Headers {
+    font-size: 3.5rem;
+    line-height: 4rem;
+  }
+}
+.Paragraphs {
+  font-weight: 400;
+  font-family: "Roboto" sans-serif;
+  font-size: 1.1875rem;
+  line-height: 1.75rem;
+  letter-spacing: 0.03em;
+  color: #6a839f;
+}
+
+@media (min-width: 1440px) {
+  .Paragraphs {
+    font-size: 2rem;
+    line-height: 2.4rem;
+  }
+}
+.Button {
+  all: unset;
+  font-weight: 600;
+  box-sizing: border-box;
+  font-size: 1rem;
+  line-height: 0.875rem;
+  padding: 15px 20px;
+  text-align: center;
+  transition: all 300ms ease-out;
+  color: #ffffff;
+  cursor: pointer;
+  background: #17324f;
+  box-shadow: 0px 4px 20px rgba(24, 30, 36, 0.1);
+  border-radius: 4px;
+  height: 100%;
+  position: relative;
+  display: block;
+  border: 2px solid #17324f;
+}
+
+@media (min-width: 1440px) {
+  .Button {
+    font-size: 1.8rem;
+    padding: 25px 30px;
+  }
+}
+.OpposeButton {
+  background: #fafcfd;
+  box-shadow: 14px 22px 52px -12px rgba(127, 127, 127, 0.13);
+  border: 2px solid #17324f;
+  color: #17324f;
+}
+
+.Input {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.3125rem;
+  letter-spacing: 0.03em;
+  color: #3a3a3a;
+  width: min(100%, 300px);
+  position: relative;
+}
+
+.Input::after {
+  content: attr(data-after);
+  position: absolute;
+  left: var(--left-offset);
+  font-size: x-large;
+  color: red;
+}
+
+.Input span.before {
+  margin-top: 12px;
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  width: -moz-fit-content;
+  width: fit-content;
+  color: rgb(178, 180, 180);
+  height: 40px;
+  border-right: 1px solid black;
+  padding-right: 3px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.Input span + input {
+  display: inline-block;
+  padding-left: 100px;
+}
+
+.Input input {
+  all: unset;
+  box-sizing: border-box;
+  padding: 12px 10px;
+  border: 1px solid black;
+  cursor: text;
+  border-radius: 7px;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.Input .file {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  border: 2.5px solid #e9edf1;
+  border-radius: 14px;
+  padding: 10px 1rem;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.Input .file span {
+  width: 70%;
+}
+
+.Input .file i {
+  line-height: 1.4;
+  font-style: normal;
+  text-decoration: underline;
+  font-weight: 700;
+}
+
+.Span {
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 150%;
+  color: #17324f;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+}
+
+@media (min-width: 1000px) {
+  .Span {
+    font-size: 1.2rem;
+  }
+}
+@media (min-width: 1440px) {
+  .Span {
+    font-size: 1.5rem;
+  }
+}
+.Radio {
+  all: unset;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+}
+
+.Radio .radio {
+  background: rgba(233, 237, 241, 0.2);
+  padding: 10px 15px;
+  border: 1.41644px solid #bac6d2;
+  border-radius: 5.24918px;
+  max-width: 250px;
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  cursor: pointer;
+  transition: all 300ms ease-out;
+  width: 100%;
+}
+
+.Radio .radio:hover {
+  background: rgba(233, 237, 241, 0.4);
+}
+
+.Radio .radio label {
+  cursor: pointer;
+}
+
+@media (max-width: 700px) {
+  .Radio {
+    flex-direction: column;
+  }
+}
+.Selector {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.3125rem;
+  letter-spacing: 0.03em;
+  color: #3a3a3a;
+  width: min(100%, 300px);
+  position: relative;
+}
+
+.Selector .Filters {
+  background: none;
+  position: relative;
+}
+
+.Selector .Filters .filterCurrent {
+  cursor: pointer;
+  border-radius: 7px;
+  width: 100%;
+  padding: 0.2rem 0.5rem;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: none;
+  border: 1px solid rgba(0, 0, 0, 0.9);
+}
+
+.Selector .Filters .filter {
+  height: 300px;
+  overflow-y: auto;
+  border-radius: 7px;
+  position: absolute;
+  top: 0;
+  z-index: 5;
+  padding: 0.2rem 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background: none;
+  background-color: rgba(13, 13, 13, 0.8);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 0, 0, 0.9);
+  opacity: 1;
+  gap: 0.5rem;
+  width: 100%;
+  /* Style for the scrollbar */
+  /* Style for the scrollbar thumb */
+  /* Style for the scrollbar track */
+}
+
+.Selector .Filters .filter div {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  opacity: 0.8;
+  background: none;
+  cursor: pointer;
+  padding: 0.5rem 0.6rem;
+  transition: opacity 200ms ease-in;
+}
+
+.Selector .Filters .filter div:hover {
+  opacity: 1;
+  background-color: rgb(13, 13, 13);
+}
+
+.Selector .Filters .filter::-webkit-scrollbar {
+  width: 5px;
+}
+
+.Selector .Filters .filter::-webkit-scrollbar-thumb {
+  background-color: #f2f2f2;
+  border-radius: 5px;
+}
+
+.Selector .Filters .filter::-webkit-scrollbar-track {
+  background-color: #1f202e;
+}
+
+.active {
+  background-color: #1f202e !important;
+  color: white;
+  opacity: 1 !important;
+}
+
+.UserPage .UserSection {
+  padding: 4%;
+}
+@media (max-width: 700px) {
+  .UserPage .UserSection {
+    padding-top: 10%;
+  }
+}
+.UserPage .UserSection .User .UserBox {
+  position: relative;
+  padding: 4%;
+  background: #12273d;
+  -webkit-backdrop-filter: blur(25px);
+          backdrop-filter: blur(25px);
+  border-radius: 20px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.UserPage .UserSection .User .UserBox .Details {
+  width: calc(100% - 250px);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+}
+.UserPage .UserSection .User .UserBox .Details div {
+  font-size: 35px;
+}
+.UserPage .UserSection .User .UserBox .UserPlaceholder {
+  position: absolute;
+  height: 350px;
+  width: 250px;
+  bottom: 0;
+  right: 0;
+}
+@media (max-width: 700px) {
+  .UserPage .UserSection .User .UserBox {
+    height: 250px;
+  }
+  .UserPage .UserSection .User .UserBox .Details div {
+    font-size: 25px;
+    line-height: 2rem;
+  }
+  .UserPage .UserSection .User .UserBox .Details p {
+    font-size: 16px;
+  }
+}
+@media (max-width: 550px) {
+  .UserPage .UserSection .User .UserBox .Details {
+    width: calc(100% - 180px);
+  }
+  .UserPage .UserSection .User .UserBox .UserPlaceholder {
+    width: 200px;
+    height: 300px;
+  }
+}
+@media (max-width: 473px) {
+  .UserPage .UserSection .User .UserBox {
+    height: 200px;
+  }
+  .UserPage .UserSection .User .UserBox .Details {
+    width: calc(100% - 130px);
+    gap: 5px;
+  }
+  .UserPage .UserSection .User .UserBox .Details div {
+    font-size: 20px;
+  }
+  .UserPage .UserSection .User .UserBox .Details p {
+    font-size: 14px;
+    line-height: 1.35rem;
+  }
+  .UserPage .UserSection .User .UserBox .Details button {
+    padding: 10px 15px;
+  }
+  .UserPage .UserSection .User .UserBox .UserPlaceholder {
+    width: 150px;
+    height: 250px;
+  }
+}
+@media (max-width: 390px) {
+  .UserPage .UserSection .User .UserBox {
+    height: 150px;
+  }
+  .UserPage .UserSection .User .UserBox .Details {
+    width: calc(100% - 90px);
+    gap: 5px;
+  }
+  .UserPage .UserSection .User .UserBox .Details div {
+    font-size: 18px;
+  }
+  .UserPage .UserSection .User .UserBox .Details p {
+    font-size: 13px;
+    line-height: 1.3rem;
+  }
+  .UserPage .UserSection .User .UserBox .Details button {
+    padding: 7px 10px;
+    font-size: 0.7rem;
+  }
+  .UserPage .UserSection .User .UserBox .UserPlaceholder {
+    width: 100px;
+    height: 200px;
+  }
+}
+@media (max-width: 360px) {
+  .UserPage .UserSection .User .UserBox {
+    height: 130px;
+  }
+  .UserPage .UserSection .User .UserBox .Details {
+    width: calc(100% - 70px);
+    gap: 2px;
+  }
+  .UserPage .UserSection .User .UserBox .Details div {
+    font-size: 16px;
+    line-height: 1.5rem;
+  }
+  .UserPage .UserSection .User .UserBox .Details p {
+    font-size: 12px;
+    line-height: 1.2rem;
+  }
+  .UserPage .UserSection .User .UserBox .Details button {
+    padding: 6px 8.5px;
+    font-size: 0.65rem;
+  }
+  .UserPage .UserSection .User .UserBox .UserPlaceholder {
+    width: 80px;
+    height: 160px;
+  }
+}
+.UserPage .TableSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.UserPage .TableSection aside {
+  flex: 33.33%;
+  border-top: 0.5px solid #8a8b8b;
+  border-bottom: 0.5px solid #8a8b8b;
+}
+.UserPage .TableSection .ConvertFunds {
+  border-left: 0.5px solid #8a8b8b;
+}
+.UserPage .TableSection .RecentPayments .RecentPaymentsBox {
+  padding: 10% 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 1rem;
+}
+
+.Aside {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  padding-top: 10%;
+  gap: 10%;
+  align-items: center;
+}
+.Aside .document div {
+  border-radius: 230px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Aside .document .doc1 {
+  background: #e7f2fe;
+  width: 300px;
+  height: 300px;
+}
+.Aside .document .doc1 .doc2 {
+  background: #d5e9fd;
+  width: 250px;
+  height: 250px;
+}
+.Aside .document .doc1 .doc2 .doc3 {
+  background: #cbe4fd;
+  width: 180px;
+  height: 180px;
 }/*# sourceMappingURL=styles.module.css.map */
