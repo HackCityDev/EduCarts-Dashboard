@@ -12,7 +12,7 @@ import Input from "../General/Input";
 import Paragraphs from "../General/Paragraphs";
 import HighlightHeader from "../General/HighlightHeader";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function Navbar() {
   const [openBar, setOpenBar] = useState(false);
@@ -26,6 +26,7 @@ export default function Navbar() {
     });
     return title;
   }
+  console.log(openBar);
   return (
     <nav className={styles.Navbar}>
       <div className={styles.Dashboard}>
@@ -37,8 +38,7 @@ export default function Navbar() {
           <CiSearch color="#ADB1B2" fontSize="1.2rem" />
         ) : (
           <Input
-            placeholder="Type to search"
-            before={<CiSearch />}
+            placeholder="🔍 Type to search"
             labelStyle={{ width: "min(100%, 200px)" }}
             inputStyle={{ border: "0.75px solid #E8E8E8", borderRadius: "6px" }}
           />
@@ -50,7 +50,7 @@ export default function Navbar() {
           <span></span>
         </div>
       </div>
-      <div className={styles.Avatar} onClick={() => setOpenBar(true)}>
+      <div className={styles.Avatar} onClick={() => setOpenBar(!openBar)}>
         <div className={styles.AvatarImage}>
           <Image src={Avatar} objectFit="cover" layout="fill" />
         </div>
@@ -61,7 +61,7 @@ export default function Navbar() {
           />
         )}
         <HiChevronDown />
-        {openBar && <Bar close={setOpenBar} />}
+        {openBar && <Bar setOpenBar={setOpenBar} />}
       </div>
     </nav>
   );
@@ -76,16 +76,39 @@ let accountUrls = [
   { link: "/identity", name: "Identity" },
   { link: "/security", name: "Security" },
 ];
-function Bar({ close }) {
+function Bar({ setOpenBar }) {
+  let menuRef = useRef();
+  useEffect(() => {
+    let handler = (e) => {
+      try {
+        if (!menuRef.current?.contains(e.target)) {
+          setOpenBar(false);
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    document.addEventListener("mousedown", handler);
+    return () => {
+      document.removeEventListener("mousedown", handler);
+    };
+  });
   return (
-    <div className={styles.Bar}>
-      <aside>
-        <Paragraphs content="Accounts" />{" "}
-        <IoCloseOutline onClick={() => close(false)} />
+    <div className={styles.Bar} ref={menuRef}>
+      <aside className={styles.Top}>
+        <Paragraphs
+          content="Accounts"
+          style={{
+            color: "#0d1d2f",
+          }}
+        />
+        <span onClick={() => setOpenBar(false)}>
+          <IoCloseOutline color="#0d1d2f" />
+        </span>
       </aside>
-      <aside>
+      <aside className={styles.Bottom}>
         {accountUrls.map((url) => (
-          <Link href={url.link}>
+          <Link href={url.link} key={url.link}>
             <a>{url.name}</a>
           </Link>
         ))}

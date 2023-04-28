@@ -3,9 +3,9 @@ import Image from "next/image";
 import styles from "../styles.module.css";
 import { HiChevronDown } from "react-icons/hi";
 import User from "../../assets_dashboard/user.png";
-import UserMobile from "../../assets_dashboard/userMobile.png";
 import HighlightHeader from "../General/HighlightHeader";
 import Headers from "../General/Headers";
+import Span from "../General/Span";
 import Paragraphs from "../General/Paragraphs";
 import Button from "../General/Button";
 import { ConvertIcon, SmileIcon } from "../../assets_dashboard/UserHomepage";
@@ -40,12 +40,7 @@ export default function UserPage() {
               />
             </div>
             <div className={styles.UserPlaceholder}>
-              <Image
-                src={User}
-                // src={isMobile ? UserMobile : User}
-                objectFit="cover"
-                layout="fill"
-              />
+              <Image src={User} objectFit="cover" layout="fill" />
             </div>
           </div>
         </aside>
@@ -56,7 +51,7 @@ export default function UserPage() {
           <ConvertFunds />
         </aside>
         <aside className={styles.RecentPayments}>
-          <RecentPayments />
+          {/* <RecentPayments /> */}
         </aside>
         <aside className={styles.RecentActivity}></aside>
       </section>
@@ -69,33 +64,40 @@ function ConvertFunds() {
     <div className={styles.ConvertFundsBox}>
       <div className={styles.Currencies}>
         <div className={styles.CurrencyBox}>
-          <div className={styles.CurrencyName}></div>
+          <div className={styles.CurrencyName}>
+            <Span content="American Dollars" />
+          </div>
           <div className={styles.CurrencySelector}>
             <div className={styles.CurrencyFlag}>
               <Image
-                width="24px"
-                height="16px"
-                src="https://flagsapi.com/BE/flat/64.png"
+                width="32px"
+                height="28px"
+                src="https://flagsapi.com/US/flat/64.png"
               />
               <HiChevronDown />
             </div>
+            <Paragraphs content="$1" />
           </div>
         </div>
         <ConvertIcon />
         <div className={styles.CurrencyBox}>
-          <div className={styles.CurrencyName}></div>{" "}
+          <div className={styles.CurrencyName}>
+            <Span content="Nigerian Naira" />
+          </div>{" "}
           <div className={styles.CurrencySelector}>
             <div className={styles.CurrencyFlag}>
               <Image
-                width="24px"
-                height="16px"
-                src="https://flagsapi.com/NG/shiny/64.png"
+                width="32px"
+                height="28px"
+                src="https://flagsapi.com/NG/flat/64.png"
               />{" "}
               <HiChevronDown />
             </div>
+            <Paragraphs content="#700" />
           </div>
         </div>
       </div>
+      <Button content="Convert" oppose={true} />
     </div>
   );
 }
