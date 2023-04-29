@@ -984,25 +984,57 @@
   align-items: center;
   width: 100%;
   flex-direction: column;
+  gap: 1rem;
 }
 .UserPage .TableSection aside {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-}
-.UserPage .TableSection .ConvertFunds {
-  border-left: 0.5px solid #8a8b8b;
   flex-direction: column;
 }
-.UserPage .TableSection .ConvertFunds > p {
+.UserPage .TableSection .Header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   width: 100%;
-  font-weight: 700;
-  color: #12273d;
-  font-size: 20px;
   padding: 7px 4%;
   border-top: 0.5px solid #8a8b8b;
   border-bottom: 0.5px solid #8a8b8b;
+}
+.UserPage .TableSection .Header p {
+  font-weight: 700;
+  color: #12273d;
+  font-size: 20px;
+}
+.UserPage .TableSection .Header span {
+  font-size: 14px;
+  color: #17324f;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+}
+.UserPage .TableSection .PaymentMethod .CardContainer {
+  padding: 1rem 4% 2rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.UserPage .TableSection .PaymentMethod .CardContainer .Card {
+  border: 2px dashed #98aabd;
+  width: min(400px, 100%);
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-direction: column;
+}
+.UserPage .TableSection .PaymentMethod .CardContainer .Card p {
+  font-size: 20px;
+  line-height: 32px;
+  color: #20466f;
+  text-align: center;
+}
+.UserPage .TableSection .ConvertFunds {
+  border-left: 0.5px solid #8a8b8b;
 }
 .UserPage .TableSection .ConvertFunds .ConvertFundsBox {
   padding: 12px 4% 20px;
@@ -1011,7 +1043,7 @@
   align-items: center;
   width: 100%;
   flex-direction: column;
-  gap: 1rem;
+  gap: 2rem;
 }
 .UserPage .TableSection .ConvertFunds .ConvertFundsBox .Currencies {
   display: flex;
@@ -1064,20 +1096,96 @@
   width: min(300px, 100%);
 }
 .UserPage .TableSection .RecentPayments .RecentPaymentsBox {
-  padding: 10% 0;
+  padding: 5% 4%;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   gap: 1rem;
 }
+.UserPage .TableSection .Recommended .RecommendedOptions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+  padding: 0 4%;
+}
+.UserPage .TableSection .Recommended .RecommendedOptions .Option {
+  border-bottom: 0.75px solid #e8e8e8;
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+}
+.UserPage .TableSection .Recommended .RecommendedOptions .Option div {
+  display: flex;
+  gap: 8px;
+}
+.UserPage .TableSection .Recommended .RecommendedOptions .Option div .OptionInfo {
+  gap: 5px;
+  flex-direction: column;
+}
+.UserPage .TableSection .Recommended .RecommendedOptions .Option div .OptionInfo h1 {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #44484a;
+}
+.UserPage .TableSection .Recommended .RecommendedOptions .Option div .OptionInfo p {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+  color: #939697;
+}
+.UserPage .TableSection .Recommended .RecommendedOptions .Option span {
+  padding: 10px;
+  border: 1px solid #e8e8e8;
+  border-radius: 32px;
+  line-height: 0;
+}
+@media (min-width: 600px) {
+  .UserPage .TableSection {
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+  }
+  .UserPage .TableSection aside {
+    align-self: baseline;
+  }
+  .UserPage .TableSection .ConvertFunds {
+    order: 1;
+    width: 120%;
+  }
+  .UserPage .TableSection .PaymentMethod {
+    order: 2;
+    width: 80%;
+    position: relative;
+    right: -20%;
+    border-left: 0.5px solid #8a8b8b;
+  }
+  .UserPage .TableSection .RecentPayments {
+    order: 3;
+    width: 120%;
+  }
+  .UserPage .TableSection .Recommended {
+    order: 4;
+    width: 80%;
+    position: relative;
+    right: -20%;
+    border-left: 0.5px solid #8a8b8b;
+  }
+}
 
 .Aside {
   flex: 2;
   display: flex;
   flex-direction: column;
-  padding-top: 10%;
-  gap: 10%;
+  padding-top: 1%;
+  gap: 1rem;
   align-items: center;
 }
 .Aside .document div {
@@ -1088,16 +1196,55 @@
 }
 .Aside .document .doc1 {
   background: #e7f2fe;
-  width: 300px;
-  height: 300px;
+  width: 200px;
+  height: 200px;
 }
 .Aside .document .doc1 .doc2 {
   background: #d5e9fd;
-  width: 250px;
-  height: 250px;
+  width: 150px;
+  height: 150px;
 }
 .Aside .document .doc1 .doc2 .doc3 {
   background: #cbe4fd;
-  width: 180px;
-  height: 180px;
+  width: 100px;
+  height: 100px;
+}
+.Aside .document .doc1 .doc2 .doc3 svg {
+  width: 60px;
+  height: 60px;
+}
+@media (max-width: 600px) {
+  .Aside .document .doc1 {
+    width: 140px;
+    height: 140px;
+  }
+  .Aside .document .doc1 .doc2 {
+    width: 100px;
+    height: 100px;
+  }
+  .Aside .document .doc1 .doc2 .doc3 {
+    width: 60px;
+    height: 60px;
+  }
+  .Aside .document .doc1 .doc2 .doc3 svg {
+    width: 35px;
+    height: 35px;
+  }
+}
+.Aside .emptyTx {
+  max-width: 300px;
+}
+.Aside .emptyTx h1 {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 125%;
+  color: #3e3e42;
+  text-align: center;
+}
+.Aside .emptyTx p {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  color: #7e7e80;
 }/*# sourceMappingURL=styles.module.css.map */

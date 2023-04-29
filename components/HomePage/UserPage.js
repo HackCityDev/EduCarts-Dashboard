@@ -9,6 +9,15 @@ import Span from "../General/Span";
 import Paragraphs from "../General/Paragraphs";
 import Button from "../General/Button";
 import { ConvertIcon, SmileIcon } from "../../assets_dashboard/UserHomepage";
+import {
+  AddPaymentMethodIcon,
+  AwardIcon,
+  CalendarIcon,
+  CardPOSIcon,
+  HouseIcon,
+  StarIcon,
+  TrashIcon,
+} from "../../assets_dashboard/RecommendedSection";
 
 export default function UserPage() {
   let userName = "Adewale John";
@@ -46,19 +55,48 @@ export default function UserPage() {
         </aside>
       </section>
       <section className={styles.TableSection}>
+        <aside className={styles.PaymentMethod}>
+          <div className={styles.Header}>
+            <Paragraphs content="Payment Method" />
+          </div>
+          <PaymentMethod />
+        </aside>
         <aside className={styles.ConvertFunds}>
-          <Paragraphs content="Convert Funds" />
+          <div className={styles.Header}>
+            <Paragraphs content="Convert Funds" />
+          </div>
           <ConvertFunds />
         </aside>
         <aside className={styles.RecentPayments}>
-          {/* <RecentPayments /> */}
+          <div className={styles.Header}>
+            <Paragraphs content="Recent Transactions" />
+            <Span content="View all" />
+          </div>
+          <div className={styles.RecentPaymentsBox}>
+            <Aside />
+          </div>
         </aside>
-        <aside className={styles.RecentActivity}></aside>
+        <aside className={styles.Recommended}>
+          <div className={styles.Header}>
+            <Paragraphs content="Recommended" />
+            <Span content="See all" />
+          </div>
+          <RecommendedOption />
+        </aside>
       </section>
     </main>
   );
 }
-
+function PaymentMethod() {
+  return (
+    <div className={styles.CardContainer}>
+      <div className={styles.Card}>
+        <AddPaymentMethodIcon />
+        <Paragraphs content="Add a payment method" />
+      </div>
+    </div>
+  );
+}
 function ConvertFunds() {
   return (
     <div className={styles.ConvertFundsBox}>
@@ -101,14 +139,32 @@ function ConvertFunds() {
     </div>
   );
 }
-
-function RecentPayments() {
+function RecommendedOption() {
   return (
-    <div className={styles.RecentPaymentsBox}>
-      <Aside />
+    <div className={styles.RecommendedOptions}>
+      {RecommendedOptions.map((option, i) => (
+        <div key={i} className={styles.Option}>
+          <div className={styles.Info}>
+            {option.icon}
+            <div className={styles.OptionInfo}>
+              <Headers content={option.title} />
+              <Paragraphs content={option.text} />
+            </div>
+          </div>
+          <div className={styles.Controls}>
+            <span>
+              <TrashIcon />
+            </span>
+            <span>
+              <StarIcon />
+            </span>
+          </div>
+        </div>
+      ))}
     </div>
   );
 }
+
 export function Aside({ state }) {
   return (
     <div className={styles.Aside}>
@@ -128,3 +184,26 @@ export function Aside({ state }) {
     </div>
   );
 }
+
+let RecommendedOptions = [
+  {
+    icon: <HouseIcon />,
+    title: "Free Appartments",
+    text: "Amber Hostels is offering...",
+  },
+  {
+    icon: <AwardIcon />,
+    title: "Educarts Awards",
+    text: "Read about Anita, the bes...",
+  },
+  {
+    icon: <CardPOSIcon />,
+    title: "Payment Tracking",
+    text: "Educarts will now charge...",
+  },
+  {
+    icon: <CalendarIcon />,
+    title: "Payments To Oxford",
+    text: "Your Payments to oxford is...",
+  },
+];
