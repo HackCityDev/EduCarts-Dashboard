@@ -13,10 +13,13 @@ import Paragraphs from "../General/Paragraphs";
 import HighlightHeader from "../General/HighlightHeader";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
+import Sidebar from "./sidebar";
 
 export default function Navbar() {
   const [openBar, setOpenBar] = useState(false);
+  const [openSideBar, setOpenSideBar] = useState(false);
   let isMobile = useMQ("(max-width: 700px)");
+  let isDesktop = useMQ("(min-width: 1000px)");
   let router = useRouter();
   function activeLink(link) {
     let title = headersUrls.map((headersUrl) => {
@@ -26,11 +29,28 @@ export default function Navbar() {
     });
     return title;
   }
-  console.log(openBar);
+  let sidebarRef = useRef();
+  useEffect(() => {
+    let handler = (e) => {
+      try {
+        if (!sidebarRef.current?.contains(e.target)) {
+          setOpenSideBar(false);
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    document.addEventListener("mousedown", handler);
+    return () => {
+      document.removeEventListener("mousedown", handler);
+    };
+  });
   return (
     <nav className={styles.Navbar}>
       <div className={styles.Dashboard}>
-        {isMobile ? <RxHamburgerMenu /> : <DashboardIcon />}
+        <span onClick={() => setOpenSideBar(!openSideBar)}>
+          {isMobile ? <RxHamburgerMenu /> : <DashboardIcon />}
+        </span>
         <HighlightHeader content={activeLink(router.route)} />
       </div>
       <div className={styles.Search}>
@@ -40,7 +60,10 @@ export default function Navbar() {
           <Input
             placeholder="🔍 Type to search"
             labelStyle={{ width: "min(100%, 200px)" }}
-            inputStyle={{ border: "0.75px solid #E8E8E8", borderRadius: "6px" }}
+            inputStyle={{
+              border: "0.75px solid #E8E8E8",
+              borderRadius: "6px",
+            }}
           />
         )}
       </div>
@@ -63,6 +86,9 @@ export default function Navbar() {
         <HiChevronDown />
         {openBar && <Bar setOpenBar={setOpenBar} />}
       </div>
+      <aside ref={sidebarRef} className={styles.openSideBar}>
+        {openSideBar && <Sidebar />}
+      </aside>
     </nav>
   );
 }

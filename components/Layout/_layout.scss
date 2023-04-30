@@ -11,20 +11,28 @@
   }
   .LayoutNavbar {
     width: 100%;
+    padding-top: 80px;
     @media (min-width: 1000px) {
       width: calc(100% - 270px);
     }
   }
 }
 .Navbar {
-  width: 100%;
+  z-index: 10;
+  background-color: #fff;
   height: 80px;
   @include G.Flex();
   padding: 0 G.$leftRight;
   gap: 10px;
   border-bottom: 1px solid #adb1b2;
-  position: relative;
-  div {
+  position: fixed;
+  top: 0;
+  right: 0;
+  // box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+  @media (min-width: 1000px) {
+    width: calc(100% - 270px);
+  }
+  & > div {
     display: flex;
     align-items: center;
   }
@@ -34,6 +42,11 @@
     justify-content: flex-start;
     div {
       font-size: 20px;
+    }
+    span {
+      display: flex;
+      line-height: 0;
+      align-items: center;
     }
     svg {
       font-size: 1.4rem;
@@ -129,93 +142,121 @@
       order: 3;
     }
   }
-}
-.Sidebar {
-  min-height: 100vh;
-  background: #0d1d2f;
-  border: 0.5px solid rgba(24, 35, 58, 0.5);
-  width: 100%;
-  //   position: fixed;
-  .Logo {
-    height: 80px;
-    border-bottom: 1px solid #adb1b2;
-    @include G.Flex();
+  .openSideBar {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: min(100%, 270px);
   }
-  .AccountType {
-    padding: 5% 0;
-    border-bottom: 1px solid #adb1b2;
-    @include G.Flex();
-    position: relative;
-    .Account {
-      border: 1px solid rgba(233, 237, 241, 0.25);
-      border-radius: 4px;
-      padding: 12px;
-      width: 90%;
-      div {
-        @include G.Flex();
-        justify-content: flex-start;
-        gap: 3px;
-        margin-top: 5px;
-        span {
-          position: absolute;
-          top: 50%;
-          right: 10%;
-          color: #fff;
-          font-size: 2rem;
-          transform: translateY(-50%);
+}
+.SidebarContainer {
+  height: 100vh;
+  position: relative;
+  .Sidebar {
+    min-height: 100vh;
+    background: #0d1d2f;
+    border: 0.5px solid rgba(24, 35, 58, 0.5);
+    overflow-y: auto;
+    width: 270px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    .Logo {
+      height: 80px;
+      border-bottom: 1px solid #adb1b2;
+      @include G.Flex();
+    }
+    .AccountType {
+      padding: 5% 0;
+      border-bottom: 1px solid #adb1b2;
+      @include G.Flex();
+      position: relative;
+      .Account {
+        border: 1px solid rgba(233, 237, 241, 0.25);
+        border-radius: 4px;
+        padding: 12px;
+        width: 90%;
+        div {
+          @include G.Flex();
+          justify-content: flex-start;
+          gap: 3px;
+          margin-top: 5px;
+          span {
+            position: absolute;
+            top: 50%;
+            right: 10%;
+            color: #fff;
+            font-size: 2rem;
+            transform: translateY(-50%);
+          }
         }
       }
     }
-  }
-  .Links {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    a {
-      padding: 1rem 5%;
-      color: #f4f9fa;
-      //   opacity: 0.9;
-      font-size: 20px;
+    .Links {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      a {
+        padding: 1rem 5%;
+        color: #f4f9fa;
+        //   opacity: 0.9;
+        font-size: 20px;
+      }
     }
-  }
-  .InstallAppModal {
-    margin: 20px 0;
-    @include G.Flex();
-    .Modal {
-      padding: 0.75rem 1rem;
-      background: #152335;
-      border: 1px solid rgba(233, 237, 241, 0.25);
-      border-radius: 4px;
-      width: 90%;
-      position: relative;
-      .ModalTop {
+    .FooterComponent {
+      @include G.BOX;
+      gap: 10px;
+      overflow: hidden;
+      background: #0d1d2f;
+      z-index: 2;
+      @media (min-width: 1200px) {
+        position: sticky;
+        bottom: 0;
+        left: 0;
+      }
+    }
+    .InstallAppModal {
+      margin: 20px 0;
+      @include G.Flex();
+      .Modal {
+        padding: 0.75rem 1rem;
+        background: #152335;
+        border: 1px solid rgba(233, 237, 241, 0.25);
+        border-radius: 4px;
+        width: 90%;
+        position: relative;
+        .ModalTop {
+          @include G.Flex();
+          justify-content: flex-start;
+          gap: 5px;
+        }
+        span {
+          font-size: 14px;
+        }
+        .Close {
+          font-size: 20px;
+          position: absolute;
+          bottom: 1rem;
+          right: 10%;
+        }
+      }
+    }
+    .Footer {
+      margin: 20px 0;
+      padding: 0 5%;
+      .Logout {
         @include G.Flex();
         justify-content: flex-start;
         gap: 5px;
-      }
-      span {
-        font-size: 14px;
-      }
-      .Close {
-        font-size: 20px;
-        position: absolute;
-        bottom: 1rem;
-        right: 10%;
+        margin: 5px 0;
+        span {
+          color: #dd7076;
+          text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+        }
       }
     }
-  }
-  .Footer {
-    margin: 20px 0;
-    padding: 0 5%;
-    .Logout {
-      @include G.Flex();
-      justify-content: flex-start;
-      gap: 5px;
-      margin: 5px 0;
-      span {
-        color: #dd7076;
-        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
-      }
-    }
+    @include G.Webkit;
   }
 }

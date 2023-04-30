@@ -312,6 +312,7 @@
 }
 .Layout .LayoutNavbar {
   width: 100%;
+  padding-top: 80px;
 }
 @media (min-width: 1000px) {
   .Layout .LayoutNavbar {
@@ -320,7 +321,8 @@
 }
 
 .Navbar {
-  width: 100%;
+  z-index: 10;
+  background-color: #fff;
   height: 80px;
   display: flex;
   justify-content: center;
@@ -329,9 +331,16 @@
   padding: 0 4%;
   gap: 10px;
   border-bottom: 1px solid #adb1b2;
-  position: relative;
+  position: fixed;
+  top: 0;
+  right: 0;
 }
-.Navbar div {
+@media (min-width: 1000px) {
+  .Navbar {
+    width: calc(100% - 270px);
+  }
+}
+.Navbar > div {
   display: flex;
   align-items: center;
 }
@@ -342,6 +351,11 @@
 }
 .Navbar .Dashboard div {
   font-size: 20px;
+}
+.Navbar .Dashboard span {
+  display: flex;
+  line-height: 0;
+  align-items: center;
 }
 .Navbar .Dashboard svg {
   font-size: 1.4rem;
@@ -438,14 +452,30 @@
     order: 3;
   }
 }
+.Navbar .openSideBar {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: min(100%, 270px);
+}
 
-.Sidebar {
+.SidebarContainer {
+  height: 100vh;
+  position: relative;
+}
+.SidebarContainer .Sidebar {
   min-height: 100vh;
   background: #0d1d2f;
   border: 0.5px solid rgba(24, 35, 58, 0.5);
-  width: 100%;
+  overflow-y: auto;
+  width: 270px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
 }
-.Sidebar .Logo {
+.SidebarContainer .Sidebar .Logo {
   height: 80px;
   border-bottom: 1px solid #adb1b2;
   display: flex;
@@ -453,7 +483,7 @@
   align-items: center;
   width: 100%;
 }
-.Sidebar .AccountType {
+.SidebarContainer .Sidebar .AccountType {
   padding: 5% 0;
   border-bottom: 1px solid #adb1b2;
   display: flex;
@@ -462,13 +492,13 @@
   width: 100%;
   position: relative;
 }
-.Sidebar .AccountType .Account {
+.SidebarContainer .Sidebar .AccountType .Account {
   border: 1px solid rgba(233, 237, 241, 0.25);
   border-radius: 4px;
   padding: 12px;
   width: 90%;
 }
-.Sidebar .AccountType .Account div {
+.SidebarContainer .Sidebar .AccountType .Account div {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -477,7 +507,7 @@
   gap: 3px;
   margin-top: 5px;
 }
-.Sidebar .AccountType .Account div span {
+.SidebarContainer .Sidebar .AccountType .Account div span {
   position: absolute;
   top: 50%;
   right: 10%;
@@ -485,24 +515,49 @@
   font-size: 2rem;
   transform: translateY(-50%);
 }
-.Sidebar .Links {
+.SidebarContainer .Sidebar .Links {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
-.Sidebar .Links a {
+.SidebarContainer .Sidebar .Links a {
   padding: 1rem 5%;
   color: #f4f9fa;
   font-size: 20px;
 }
-.Sidebar .InstallAppModal {
+.SidebarContainer .Sidebar .FooterComponent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+  gap: 30px;
+  align-items: flex-start;
+  gap: 10px;
+  overflow: hidden;
+  background: #0d1d2f;
+  z-index: 2;
+}
+@media (min-width: 1440px) {
+  .SidebarContainer .Sidebar .FooterComponent {
+    gap: 60px;
+  }
+}
+@media (min-width: 1200px) {
+  .SidebarContainer .Sidebar .FooterComponent {
+    position: sticky;
+    bottom: 0;
+    left: 0;
+  }
+}
+.SidebarContainer .Sidebar .InstallAppModal {
   margin: 20px 0;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
 }
-.Sidebar .InstallAppModal .Modal {
+.SidebarContainer .Sidebar .InstallAppModal .Modal {
   padding: 0.75rem 1rem;
   background: #152335;
   border: 1px solid rgba(233, 237, 241, 0.25);
@@ -510,7 +565,7 @@
   width: 90%;
   position: relative;
 }
-.Sidebar .InstallAppModal .Modal .ModalTop {
+.SidebarContainer .Sidebar .InstallAppModal .Modal .ModalTop {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -518,20 +573,20 @@
   justify-content: flex-start;
   gap: 5px;
 }
-.Sidebar .InstallAppModal .Modal span {
+.SidebarContainer .Sidebar .InstallAppModal .Modal span {
   font-size: 14px;
 }
-.Sidebar .InstallAppModal .Modal .Close {
+.SidebarContainer .Sidebar .InstallAppModal .Modal .Close {
   font-size: 20px;
   position: absolute;
   bottom: 1rem;
   right: 10%;
 }
-.Sidebar .Footer {
+.SidebarContainer .Sidebar .Footer {
   margin: 20px 0;
   padding: 0 5%;
 }
-.Sidebar .Footer .Logout {
+.SidebarContainer .Sidebar .Footer .Logout {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -540,9 +595,30 @@
   gap: 5px;
   margin: 5px 0;
 }
-.Sidebar .Footer .Logout span {
+.SidebarContainer .Sidebar .Footer .Logout span {
   color: #dd7076;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+}
+.SidebarContainer .Sidebar::-webkit-scrollbar {
+  width: 0px;
+  display: none;
+  -webkit-transition: all 200ms ease-in;
+  transition: all 200ms ease-in;
+}
+.SidebarContainer .Sidebar::-webkit-scrollbar-track {
+  border-radius: 5px;
+  background-color: #0d1d2f;
+}
+.SidebarContainer .Sidebar::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: transparent;
+}
+.SidebarContainer .Sidebar:hover::-webkit-scrollbar {
+  width: 3px;
+  display: block;
+}
+.SidebarContainer .Sidebar:hover::-webkit-scrollbar-thumb {
+  background-color: #fff;
 }
 
 .HighlightHeader {
@@ -1032,9 +1108,6 @@
   line-height: 32px;
   color: #20466f;
   text-align: center;
-}
-.UserPage .TableSection .ConvertFunds {
-  border-left: 0.5px solid #8a8b8b;
 }
 .UserPage .TableSection .ConvertFunds .ConvertFundsBox {
   padding: 12px 4% 20px;

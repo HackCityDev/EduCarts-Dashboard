@@ -23,51 +23,58 @@ export default function Sidebar() {
     }
   }
   return (
-    <div className={styles.Sidebar}>
-      <div className={styles.Logo}></div>
-      <div className={styles.AccountType}>
-        <div className={styles.Account}>
-          <Span content="PLAN" style={{ fontSize: "12px", color: "#6A839F" }} />
-          <div>
-            <ProfileIcon />{" "}
-            <Paragraphs content="Personal" style={{ color: "#fff" }} />{" "}
-            <span>
-              <HiChevronUpDown />
-            </span>
+    <div className={styles.SidebarContainer}>
+      <div className={styles.Sidebar}>
+        <div className={styles.Logo}></div>
+        <div className={styles.AccountType}>
+          <div className={styles.Account}>
+            <Span
+              content="PLAN"
+              style={{ fontSize: "12px", color: "#6A839F" }}
+            />
+            <div>
+              <ProfileIcon />{" "}
+              <Paragraphs content="Personal" style={{ color: "#fff" }} />{" "}
+              <span>
+                <HiChevronUpDown />
+              </span>
+            </div>
           </div>
         </div>
-      </div>
-      <div className={styles.Links}>
-        {urls.map((url) => (
-          <Link href={url.link} key={url.link}>
-            <a style={activeLink(url.link)}>{url.name}</a>
-          </Link>
-        ))}
-      </div>
-      <div className={styles.InstallAppModal}>
-        <div className={styles.Modal}>
-          <div className={styles.ModalTop}>
-            <Image src={EDU} width="32px" height="32px" />
+        <div className={styles.Links}>
+          {urls.map((url) => (
+            <Link href={url.link} key={url.link}>
+              <a style={activeLink(url.link)}>{url.name}</a>
+            </Link>
+          ))}
+        </div>
+        <div className={styles.FooterComponent}>
+          <div className={styles.InstallAppModal}>
+            <div className={styles.Modal}>
+              <div className={styles.ModalTop}>
+                <Image src={EDU} width="32px" height="32px" />
+                <Span
+                  content="Get Educarts For Mobile"
+                  style={{ color: "#6A839F" }}
+                />
+              </div>
+              <Span
+                content="Install mobile app"
+                style={{ textDecoration: "underline", color: "#E8E8E8" }}
+              />
+              <IoCloseOutline color="#E8E8E8" className={styles.Close} />
+            </div>
+          </div>
+          <div className={styles.Footer}>
+            <div className={styles.Logout}>
+              <LogoutIcon /> <Span content="Log Out" />
+            </div>
             <Span
-              content="Get Educarts For Mobile"
-              style={{ color: "#6A839F" }}
+              content="© Copyright Educarts 2023"
+              style={{ color: "#8A8B8B" }}
             />
           </div>
-          <Span
-            content="Install mobile app"
-            style={{ textDecoration: "underline", color: "#E8E8E8" }}
-          />
-          <IoCloseOutline color="#E8E8E8" className={styles.Close} />
         </div>
-      </div>
-      <div className={styles.Footer}>
-        <div className={styles.Logout}>
-          <LogoutIcon /> <Span content="Log Out" />
-        </div>
-        <Span
-          content="© Copyright Educarts 2023"
-          style={{ color: "#8A8B8B" }}
-        />
       </div>
     </div>
   );
