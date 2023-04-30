@@ -34,6 +34,20 @@
           bottom: 0;
           right: 0;
         }
+        span {
+          flex: 1;
+          height: 100%;
+          position: absolute;
+          svg {
+            height: 100%;
+          }
+        }
+        .BG1 {
+          left: -10%;
+        }
+        .BG2 {
+          right: 15%;
+        }
         @media (max-width: G.$BP-mobile) {
           height: 250px;
           .Details {

@@ -96,7 +96,7 @@ let headersUrls = [
   { link: "/", name: "Dashboard" },
   { link: "/payments", name: "Payments" },
 ];
-let accountUrls = [
+export let accountUrls = [
   { link: "/profile", name: "Profile" },
   { link: "/transactions", name: "Transactions" },
   { link: "/identity", name: "Identity" },

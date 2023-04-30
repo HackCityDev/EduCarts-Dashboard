@@ -73,4 +73,211 @@ const ConvertIcon = (props) => (
     />
   </svg>
 );
-export { SmileIcon, ConvertIcon };
+
+const BG1 = (props) => (
+  <svg
+    width={507}
+    height={489}
+    viewBox="0 0 507 489"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    <g opacity={0.8}>
+      <g opacity={0.75} filter="url(#filter0_f_4783_21572)">
+        <path
+          fillRule="evenodd"
+          clipRule="evenodd"
+          d="M183.378 175.175C191.481 163.015 208.069 162.519 222.135 158.56C235.686 154.745 249.952 146.31 262.37 152.941C274.782 159.569 275.63 176.136 280.058 189.492C284.671 203.405 292.922 217.101 288.246 230.993C282.958 246.702 271.096 263.097 254.633 265.025C238.779 266.883 229.902 247.838 216.341 239.417C204.531 232.083 187.811 231.956 181.465 219.587C174.432 205.882 174.835 187.993 183.378 175.175Z"
+          fill="#2B86C5"
+        />
+      </g>
+      <g opacity={0.75} filter="url(#filter1_f_4783_21572)">
+        <path
+          fillRule="evenodd"
+          clipRule="evenodd"
+          d="M253.453 249.089C261.423 235.765 262.603 215.796 277.449 211.251C292.298 206.705 305.724 220.377 318.523 229.169C329.304 236.574 338.314 245.224 344.034 256.986C351.146 271.611 359.8 287.466 354.32 302.778C348.339 319.487 332.685 331.422 315.633 336.339C298.81 341.19 281.335 336.293 265.748 328.319C249.847 320.183 231.844 309.718 229.105 292.068C226.481 275.153 244.666 263.778 253.453 249.089Z"
+          fill="#784BA0"
+        />
+      </g>
+      <g opacity={0.75} filter="url(#filter2_f_4783_21572)">
+        <path
+          fillRule="evenodd"
+          clipRule="evenodd"
+          d="M160.913 248.046C168.334 237.431 181.147 233.924 193.239 229.287C206.823 224.078 220.621 214.658 234.172 219.952C248.524 225.559 258.358 240.41 260.694 255.64C262.815 269.471 251.834 280.589 245.378 293.004C238.81 305.637 236.434 322.233 223.259 327.632C209.544 333.252 194.363 326.287 181.316 319.255C168.356 312.269 155.577 303.118 151.521 288.964C147.514 274.979 152.578 259.969 160.913 248.046Z"
+          fill="#DB8000"
+        />
+      </g>
+    </g>
+    <defs>
+      <filter
+        id="filter0_f_4783_21572"
+        x={26.5488}
+        y={0.476562}
+        width={413.086}
+        height={414.676}
+        filterUnits="userSpaceOnUse"
+        colorInterpolationFilters="sRGB"
+      >
+        <feFlood floodOpacity={0} result="BackgroundImageFix" />
+        <feBlend
+          mode="normal"
+          in="SourceGraphic"
+          in2="BackgroundImageFix"
+          result="shape"
+        />
+        <feGaussianBlur
+          stdDeviation={75}
+          result="effect1_foregroundBlur_4783_21572"
+        />
+      </filter>
+      <filter
+        id="filter1_f_4783_21572"
+        x={78.8496}
+        y={60.3496}
+        width={427.201}
+        height={427.918}
+        filterUnits="userSpaceOnUse"
+        colorInterpolationFilters="sRGB"
+      >
+        <feFlood floodOpacity={0} result="BackgroundImageFix" />
+        <feBlend
+          mode="normal"
+          in="SourceGraphic"
+          in2="BackgroundImageFix"
+          result="shape"
+        />
+        <feGaussianBlur
+          stdDeviation={75}
+          result="effect1_foregroundBlur_4783_21572"
+        />
+      </filter>
+      <filter
+        id="filter2_f_4783_21572"
+        x={0.123047}
+        y={68.3887}
+        width={410.838}
+        height={411.295}
+        filterUnits="userSpaceOnUse"
+        colorInterpolationFilters="sRGB"
+      >
+        <feFlood floodOpacity={0} result="BackgroundImageFix" />
+        <feBlend
+          mode="normal"
+          in="SourceGraphic"
+          in2="BackgroundImageFix"
+          result="shape"
+        />
+        <feGaussianBlur
+          stdDeviation={75}
+          result="effect1_foregroundBlur_4783_21572"
+        />
+      </filter>
+    </defs>
+  </svg>
+);
+
+const BG2 = (props) => (
+  <svg
+    width={327}
+    height={315}
+    viewBox="0 0 327 315"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    <g opacity={0.8}>
+      <g opacity={0.5} filter="url(#filter0_f_4783_21577)">
+        <path
+          fillRule="evenodd"
+          clipRule="evenodd"
+          d="M118.792 112.8C124.009 104.971 134.69 104.651 143.747 102.102C152.472 99.6464 161.658 94.2147 169.653 98.4846C177.645 102.752 178.191 113.419 181.042 122.019C184.012 130.978 189.325 139.796 186.314 148.741C182.91 158.856 175.272 169.412 164.672 170.654C154.463 171.85 148.748 159.587 140.016 154.165C132.412 149.443 121.646 149.361 117.56 141.397C113.032 132.572 113.291 121.054 118.792 112.8Z"
+          fill="#2B86C5"
+        />
+      </g>
+      <g opacity={0.5} filter="url(#filter1_f_4783_21577)">
+        <path
+          fillRule="evenodd"
+          clipRule="evenodd"
+          d="M163.912 160.393C169.044 151.814 169.804 138.956 179.363 136.03C188.923 133.103 197.568 141.906 205.81 147.567C212.751 152.335 218.552 157.905 222.235 165.478C226.815 174.895 232.387 185.104 228.858 194.963C225.008 205.722 214.928 213.406 203.948 216.573C193.117 219.696 181.864 216.543 171.828 211.408C161.59 206.17 149.998 199.431 148.235 188.067C146.545 177.176 158.254 169.852 163.912 160.393Z"
+          fill="#784BA0"
+        />
+      </g>
+      <g opacity={0.5} filter="url(#filter2_f_4783_21577)">
+        <path
+          fillRule="evenodd"
+          clipRule="evenodd"
+          d="M104.325 159.72C109.103 152.886 117.353 150.627 125.139 147.642C133.886 144.287 142.77 138.222 151.496 141.631C160.736 145.241 167.068 154.804 168.572 164.61C169.939 173.516 162.868 180.674 158.711 188.668C154.481 196.802 152.952 207.488 144.468 210.965C135.638 214.583 125.863 210.099 117.462 205.571C109.117 201.073 100.889 195.18 98.2779 186.067C95.6978 177.062 98.9584 167.398 104.325 159.72Z"
+          fill="#DB8000"
+        />
+      </g>
+    </g>
+    <defs>
+      <filter
+        id="filter0_f_4783_21577"
+        x={17.8118}
+        y={0.315712}
+        width={265.98}
+        height={267.003}
+        filterUnits="userSpaceOnUse"
+        colorInterpolationFilters="sRGB"
+      >
+        <feFlood floodOpacity={0} result="BackgroundImageFix" />
+        <feBlend
+          mode="normal"
+          in="SourceGraphic"
+          in2="BackgroundImageFix"
+          result="shape"
+        />
+        <feGaussianBlur
+          stdDeviation={48.2914}
+          result="effect1_foregroundBlur_4783_21577"
+        />
+      </filter>
+      <filter
+        id="filter1_f_4783_21577"
+        x={51.4876}
+        y={38.8665}
+        width={275.068}
+        height={275.531}
+        filterUnits="userSpaceOnUse"
+        colorInterpolationFilters="sRGB"
+      >
+        <feFlood floodOpacity={0} result="BackgroundImageFix" />
+        <feBlend
+          mode="normal"
+          in="SourceGraphic"
+          in2="BackgroundImageFix"
+          result="shape"
+        />
+        <feGaussianBlur
+          stdDeviation={48.2914}
+          result="effect1_foregroundBlur_4783_21577"
+        />
+      </filter>
+      <filter
+        id="filter2_f_4783_21577"
+        x={0.794228}
+        y={44.0423}
+        width={264.533}
+        height={264.826}
+        filterUnits="userSpaceOnUse"
+        colorInterpolationFilters="sRGB"
+      >
+        <feFlood floodOpacity={0} result="BackgroundImageFix" />
+        <feBlend
+          mode="normal"
+          in="SourceGraphic"
+          in2="BackgroundImageFix"
+          result="shape"
+        />
+        <feGaussianBlur
+          stdDeviation={48.2914}
+          result="effect1_foregroundBlur_4783_21577"
+        />
+      </filter>
+    </defs>
+  </svg>
+);
+
+export { SmileIcon, ConvertIcon, BG1, BG2 };

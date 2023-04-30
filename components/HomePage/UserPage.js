@@ -8,7 +8,12 @@ import Headers from "../General/Headers";
 import Span from "../General/Span";
 import Paragraphs from "../General/Paragraphs";
 import Button from "../General/Button";
-import { ConvertIcon, SmileIcon } from "../../assets_dashboard/UserHomepage";
+import {
+  BG1,
+  BG2,
+  ConvertIcon,
+  SmileIcon,
+} from "../../assets_dashboard/UserHomepage";
 import {
   AddPaymentMethodIcon,
   AwardIcon,
@@ -51,6 +56,12 @@ export default function UserPage() {
             <div className={styles.UserPlaceholder}>
               <Image src={User} objectFit="cover" layout="fill" />
             </div>
+            <span className={styles.BG1}>
+              <BG1 />
+            </span>
+            <span className={styles.BG2}>
+              <BG2 />
+            </span>
           </div>
         </aside>
       </section>

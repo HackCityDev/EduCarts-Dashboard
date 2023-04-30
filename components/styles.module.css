@@ -440,7 +440,6 @@
 @media (min-width: 350px) {
   .Navbar {
     gap: 1rem;
-    border-bottom: none;
   }
 }
 @media (min-width: 1000px) {
@@ -520,10 +519,18 @@
   flex-direction: column;
   gap: 10px;
 }
-.SidebarContainer .Sidebar .Links a {
+.SidebarContainer .Sidebar .Links a,
+.SidebarContainer .Sidebar .Links span {
   padding: 1rem 5%;
   color: #f4f9fa;
+  cursor: pointer;
   font-size: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.SidebarContainer .Sidebar .Links .accountBar {
+  display: flex;
+  flex-direction: column;
 }
 .SidebarContainer .Sidebar .FooterComponent {
   display: flex;
@@ -956,6 +963,20 @@
   width: 250px;
   bottom: 0;
   right: 0;
+}
+.UserPage .UserSection .User .UserBox span {
+  flex: 1;
+  height: 100%;
+  position: absolute;
+}
+.UserPage .UserSection .User .UserBox span svg {
+  height: 100%;
+}
+.UserPage .UserSection .User .UserBox .BG1 {
+  left: -10%;
+}
+.UserPage .UserSection .User .UserBox .BG2 {
+  right: 15%;
 }
 @media (max-width: 700px) {
   .UserPage .UserSection .User .UserBox {

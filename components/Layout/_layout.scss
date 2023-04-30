@@ -131,7 +131,7 @@
   }
   @media (min-width: 350px) {
     gap: 1rem;
-    border-bottom: none;
+    // border-bottom: none;
   }
   @media (min-width: 1000px) {
     .Search {
@@ -198,11 +198,18 @@
       display: flex;
       flex-direction: column;
       gap: 10px;
-      a {
+      a,
+      span {
         padding: 1rem 5%;
         color: #f4f9fa;
-        //   opacity: 0.9;
+        cursor: pointer;
         font-size: 20px;
+        display: flex;
+        justify-content: space-between;
+      }
+      .accountBar {
+        display: flex;
+        flex-direction: column;
       }
     }
     .FooterComponent {

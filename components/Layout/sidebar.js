@@ -1,5 +1,6 @@
 import { LogoutIcon, ProfileIcon } from "../../assets_dashboard/Sidebar";
 import { HiChevronUpDown } from "react-icons/hi2";
+import { HiChevronDown } from "react-icons/hi";
 import { IoCloseOutline } from "react-icons/io5";
 import Paragraphs from "../General/Paragraphs";
 import styles from "../styles.module.css";
@@ -7,7 +8,9 @@ import Span from "../General/Span";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import Image from "next/image";
+import { useState } from "react";
 import EDU from "../../assets_dashboard/eduLogo.png";
+import { accountUrls } from "./navbar";
 
 export default function Sidebar() {
   let router = useRouter();
@@ -22,6 +25,7 @@ export default function Sidebar() {
       return {};
     }
   }
+  const [accountBar, setAccountBar] = useState(false);
   return (
     <div className={styles.SidebarContainer}>
       <div className={styles.Sidebar}>
@@ -42,11 +46,31 @@ export default function Sidebar() {
           </div>
         </div>
         <div className={styles.Links}>
-          {urls.map((url) => (
-            <Link href={url.link} key={url.link}>
-              <a style={activeLink(url.link)}>{url.name}</a>
-            </Link>
-          ))}
+          {urls.map((url, i) =>
+            url.link == null ? (
+              <div className={styles.accountBar}>
+                <span
+                  onClick={() => setAccountBar(!accountBar)}
+                  style={accountBar ? isPath : {}}
+                >
+                  {url.name} <HiChevronDown />
+                </span>
+                {accountBar && (
+                  <div style={{ marginLeft: "50px" }}>
+                    {accountUrls.map((url, i) => (
+                      <Link href={url.link} key={i}>
+                        <a style={activeLink(url.link)}>{url.name}</a>
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ) : (
+              <Link href={url.link} key={i}>
+                <a style={accountBar ? {} : activeLink(url.link)}>{url.name}</a>
+              </Link>
+            )
+          )}
         </div>
         <div className={styles.FooterComponent}>
           <div className={styles.InstallAppModal}>
@@ -83,7 +107,7 @@ let urls = [
   { link: "/", name: "Home" },
   { link: "/inbox", name: "Inbox" },
   { link: "/payments", name: "Payments" },
-  { link: "/accounts", name: "Accounts" },
+  { link: null, name: "Accounts" },
   { link: "/consult", name: "Consultants" },
   { link: "/wallet", name: "Wallets" },
   { link: "/security", name: "Security" },
