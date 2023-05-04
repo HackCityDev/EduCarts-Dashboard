@@ -1,6 +1,6 @@
 $leftRight: 10%;
 $globalGap: 30px;
-$breakpoint-mobile: 750px;
+$BP-mobile: 700px;
 $breakpoint-tablet: 1000px;
 $breakpoint-desktop: 1440px;
 $boxShadow: 4.5px 4.5px 3.1px rgba(0, 0, 0, 0.024),
@@ -15,19 +15,24 @@ $boxShadow: 4.5px 4.5px 3.1px rgba(0, 0, 0, 0.024),
 }
 @mixin Webkit {
   &::-webkit-scrollbar {
-    height: 5px;
-    display: block;
+    width: 0px;
+    display: none;
+    transition: all 200ms ease-in;
   }
   &::-webkit-scrollbar-track {
     border-radius: 5px;
-    background-color: #000000;
+    background-color: #0d1d2f;
   }
   &::-webkit-scrollbar-thumb {
     border-radius: 5px;
     background-color: transparent;
   }
+  &:hover::-webkit-scrollbar {
+    width: 3px;
+    display: block;
+  }
   &:hover::-webkit-scrollbar-thumb {
-    background-color: #b8b8b8;
+    background-color: #fff;
   }
 }
 @mixin Flex {

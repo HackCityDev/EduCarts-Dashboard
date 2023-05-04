@@ -90,7 +90,12 @@ export default function Navbar() {
         {!isMobile && (
           <Paragraphs
             content="Adewale John"
-            style={{ color: "#151A1D", fontSize: "1rem", fontWeight: "500" }}
+            style={{
+              color: "#151A1D",
+              fontSize: "1rem",
+              fontWeight: "500",
+              whiteSpace: "nowrap",
+            }}
           />
         )}
         <HiChevronDown />

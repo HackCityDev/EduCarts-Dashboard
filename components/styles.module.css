@@ -237,7 +237,9 @@
 }
 
 .Selector .Filters .filter {
-  height: 300px;
+  height: -moz-fit-content;
+  height: fit-content;
+  max-height: 300px;
   overflow-y: auto;
   border-radius: 7px;
   position: absolute;
@@ -328,7 +330,7 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  padding: 0 4%;
+  padding: 0 10%;
   gap: 10px;
   border-bottom: 1px solid #adb1b2;
   position: fixed;
@@ -362,6 +364,7 @@
   width: 22px;
 }
 .Navbar .BellIcon .Bell {
+  line-height: 0;
   position: relative;
 }
 .Navbar .BellIcon span {
@@ -607,25 +610,19 @@
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
 }
 .SidebarContainer .Sidebar::-webkit-scrollbar {
-  width: 0px;
-  display: none;
-  -webkit-transition: all 200ms ease-in;
-  transition: all 200ms ease-in;
+  height: 5px;
+  display: block;
 }
 .SidebarContainer .Sidebar::-webkit-scrollbar-track {
   border-radius: 5px;
-  background-color: #0d1d2f;
+  background-color: #000000;
 }
 .SidebarContainer .Sidebar::-webkit-scrollbar-thumb {
   border-radius: 5px;
   background-color: transparent;
 }
-.SidebarContainer .Sidebar:hover::-webkit-scrollbar {
-  width: 3px;
-  display: block;
-}
 .SidebarContainer .Sidebar:hover::-webkit-scrollbar-thumb {
-  background-color: #fff;
+  background-color: #b8b8b8;
 }
 
 .HighlightHeader {
@@ -867,7 +864,9 @@
 }
 
 .Selector .Filters .filter {
-  height: 300px;
+  height: -moz-fit-content;
+  height: fit-content;
+  max-height: 300px;
   overflow-y: auto;
   border-radius: 7px;
   position: absolute;
@@ -928,7 +927,7 @@
 }
 
 .UserPage .UserSection {
-  padding: 4%;
+  padding: 10%;
 }
 @media (max-width: 700px) {
   .UserPage .UserSection {
@@ -937,7 +936,7 @@
 }
 .UserPage .UserSection .User .UserBox {
   position: relative;
-  padding: 4%;
+  padding: 10%;
   background: #12273d;
   -webkit-backdrop-filter: blur(25px);
           backdrop-filter: blur(25px);
@@ -1095,7 +1094,7 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 7px 4%;
+  padding: 7px 10%;
   border-top: 0.5px solid #8a8b8b;
   border-bottom: 0.5px solid #8a8b8b;
 }
@@ -1110,7 +1109,7 @@
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
 }
 .UserPage .TableSection .PaymentMethod .CardContainer {
-  padding: 1rem 4% 2rem;
+  padding: 1rem 10% 2rem;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -1131,7 +1130,7 @@
   text-align: center;
 }
 .UserPage .TableSection .ConvertFunds .ConvertFundsBox {
-  padding: 12px 4% 20px;
+  padding: 12px 10% 20px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1190,7 +1189,7 @@
   width: min(300px, 100%);
 }
 .UserPage .TableSection .RecentPayments .RecentPaymentsBox {
-  padding: 5% 4%;
+  padding: 5% 10%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1203,7 +1202,7 @@
   align-items: center;
   width: 100%;
   flex-direction: column;
-  padding: 0 4%;
+  padding: 0 10%;
 }
 .UserPage .TableSection .Recommended .RecommendedOptions .Option {
   border-bottom: 0.75px solid #e8e8e8;
