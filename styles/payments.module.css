@@ -1,0 +1,1047 @@
+.HighlightHeader {
+  font-weight: 600;
+  font-size: 2.5rem;
+  line-height: 3.75rem;
+  color: #12273d;
+}
+@media (min-width: 1440px) {
+  .HighlightHeader {
+    font-size: 4rem;
+    line-height: 4.4rem;
+  }
+}
+
+.Headers {
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 2.375rem;
+  color: #17324f;
+}
+@media (min-width: 1440px) {
+  .Headers {
+    font-size: 3.5rem;
+    line-height: 4rem;
+  }
+}
+
+.Paragraphs {
+  font-weight: 400;
+  font-family: "Roboto" sans-serif;
+  font-size: 1.1875rem;
+  line-height: 1.75rem;
+  letter-spacing: 0.03em;
+  color: #6a839f;
+}
+@media (min-width: 1440px) {
+  .Paragraphs {
+    font-size: 2rem;
+    line-height: 2.4rem;
+  }
+}
+
+.Button {
+  all: unset;
+  font-weight: 600;
+  box-sizing: border-box;
+  font-size: 1rem;
+  line-height: 0.875rem;
+  padding: 15px 20px;
+  text-align: center;
+  transition: all 300ms ease-out;
+  color: #ffffff;
+  cursor: pointer;
+  background: #17324f;
+  box-shadow: 0px 4px 20px rgba(24, 30, 36, 0.1);
+  border-radius: 4px;
+  height: 100%;
+  position: relative;
+  display: block;
+  border: 2px solid #17324f;
+}
+@media (min-width: 1440px) {
+  .Button {
+    font-size: 1.8rem;
+    padding: 25px 30px;
+  }
+}
+
+.OpposeButton {
+  background: #fafcfd;
+  box-shadow: 14px 22px 52px -12px rgba(127, 127, 127, 0.13);
+  border: 2px solid #17324f;
+  color: #17324f;
+}
+
+.Input {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.3125rem;
+  letter-spacing: 0.03em;
+  color: #3a3a3a;
+  width: min(100%, 300px);
+  position: relative;
+}
+.Input::after {
+  content: attr(data-after);
+  position: absolute;
+  left: var(--left-offset);
+  font-size: x-large;
+  color: red;
+}
+.Input span.before {
+  margin-top: 12px;
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  width: -moz-fit-content;
+  width: fit-content;
+  color: rgb(178, 180, 180);
+  height: 40px;
+  border-right: 1px solid black;
+  padding-right: 3px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  gap: 5px;
+}
+.Input span + input {
+  display: inline-block;
+  padding-left: 100px;
+}
+.Input input {
+  all: unset;
+  box-sizing: border-box;
+  padding: 12px 10px;
+  border: 1px solid black;
+  cursor: text;
+  border-radius: 7px;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.Input .file {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  border: 2.5px solid #e9edf1;
+  border-radius: 14px;
+  padding: 10px 1rem;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 4px;
+}
+.Input .file span {
+  width: 70%;
+}
+.Input .file i {
+  line-height: 1.4;
+  font-style: normal;
+  text-decoration: underline;
+  font-weight: 700;
+}
+
+.Span {
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 150%;
+  color: #17324f;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+}
+@media (min-width: 1000px) {
+  .Span {
+    font-size: 1.2rem;
+  }
+}
+@media (min-width: 1440px) {
+  .Span {
+    font-size: 1.5rem;
+  }
+}
+
+.Radio {
+  all: unset;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+}
+.Radio .radio {
+  background: rgba(233, 237, 241, 0.2);
+  padding: 10px 15px;
+  border: 1.41644px solid #bac6d2;
+  border-radius: 5.24918px;
+  max-width: 250px;
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  cursor: pointer;
+  transition: all 300ms ease-out;
+  width: 100%;
+}
+.Radio .radio:hover {
+  background: rgba(233, 237, 241, 0.4);
+}
+.Radio .radio label {
+  cursor: pointer;
+}
+@media (max-width: 700px) {
+  .Radio {
+    flex-direction: column;
+  }
+}
+
+.Selector {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.3125rem;
+  letter-spacing: 0.03em;
+  color: #3a3a3a;
+  width: min(100%, 300px);
+  position: relative;
+}
+.Selector .Filters {
+  background: none;
+  position: relative;
+}
+.Selector .Filters .filterCurrent {
+  cursor: pointer;
+  border-radius: 7px;
+  width: 100%;
+  padding: 0.2rem 0.5rem;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: none;
+  border: 1px solid rgba(0, 0, 0, 0.9);
+}
+.Selector .Filters .filter {
+  height: -moz-fit-content;
+  height: fit-content;
+  max-height: 300px;
+  overflow-y: auto;
+  border-radius: 7px;
+  position: absolute;
+  top: 0;
+  z-index: 5;
+  padding: 0.2rem 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background: none;
+  background-color: rgba(13, 13, 13, 0.8);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 0, 0, 0.9);
+  opacity: 1;
+  gap: 0.5rem;
+  width: 100%;
+  /* Style for the scrollbar */
+  /* Style for the scrollbar thumb */
+  /* Style for the scrollbar track */
+}
+.Selector .Filters .filter div {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  opacity: 0.8;
+  background: none;
+  cursor: pointer;
+  padding: 0.5rem 0.6rem;
+  transition: opacity 200ms ease-in;
+}
+.Selector .Filters .filter div:hover {
+  opacity: 1;
+  background-color: rgb(13, 13, 13);
+}
+.Selector .Filters .filter::-webkit-scrollbar {
+  width: 5px;
+}
+.Selector .Filters .filter::-webkit-scrollbar-thumb {
+  background-color: #f2f2f2;
+  border-radius: 5px;
+}
+.Selector .Filters .filter::-webkit-scrollbar-track {
+  background-color: #1f202e;
+}
+
+.active {
+  background-color: #1f202e !important;
+  color: white;
+  opacity: 1 !important;
+}
+
+.Payments {
+  display: flex;
+  gap: 20px;
+  position: relative;
+}
+.Payments .Background {
+  flex: 2;
+  position: relative;
+  width: 100%;
+}
+.Payments .Background div {
+  background-image: url("../assets/paymentsBG.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  width: 100%;
+}
+.Payments .Main {
+  flex: 3;
+  padding-left: 10%;
+  margin: 1rem 0;
+}
+
+.SevisPage {
+  position: relative;
+}
+.SevisPage .Header {
+  background-image: url("../assets/sevis.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  padding: 40px 10%;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.SevisPage .Header div,
+.SevisPage .Header p {
+  color: #fff;
+  max-width: calc(400px - 10%);
+}
+.SevisPage .Header p {
+  font-size: 18px;
+}
+.SevisPage .Options {
+  padding: 0 10%;
+  margin: 1rem 0 4rem;
+}
+.SevisPage .StartSevisPayment .Body {
+  margin: 2rem 0 4rem;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 0 10%;
+}
+.SevisPage .StartSevisPayment button {
+  margin: 3rem auto;
+}
+.SevisPage .Head {
+  padding: 10px 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #17324f;
+}
+.SevisPage .Head div {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.SevisPage .Head div h1,
+.SevisPage .Head div span {
+  color: #fff;
+}
+.SevisPage .Head div h1 {
+  font-size: 18px;
+  font-weight: 600;
+}
+.SevisPage .Head div span {
+  font-size: 12px;
+  opacity: 0.9;
+}
+.SevisPage .Head div svg {
+  width: 30px;
+}
+@media (max-width: 700px) {
+  .SevisPage .Head {
+    flex-direction: column;
+    text-align: center;
+  }
+  .SevisPage .Head div h1 {
+    font-size: 15px;
+    line-height: 1.1;
+    font-weight: 500;
+  }
+  .SevisPage .Head div span {
+    font-size: 11px;
+  }
+}
+.SevisPage .SevisValidation {
+  padding: 0 10%;
+}
+.SevisPage .SevisValidation .Sevis {
+  display: flex;
+  gap: 3rem;
+}
+@media (min-width: 1000px) and (max-width: 1100px) {
+  .SevisPage .SevisValidation .Sevis {
+    gap: 1rem;
+  }
+}
+.SevisPage .SevisValidation .Info {
+  flex: 3;
+  width: 100%;
+}
+.SevisPage .SevisValidation .Aside {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  padding-top: 10%;
+  gap: 10%;
+  align-items: center;
+}
+.SevisPage .SevisValidation .Aside .document div {
+  border-radius: 230px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.SevisPage .SevisValidation .Aside .document .doc1 {
+  background: #e7f2fe;
+  width: 300px;
+  height: 300px;
+}
+.SevisPage .SevisValidation .Aside .document .doc1 .doc2 {
+  background: #d5e9fd;
+  width: 250px;
+  height: 250px;
+}
+.SevisPage .SevisValidation .Aside .document .doc1 .doc2 .doc3 {
+  background: #cbe4fd;
+  width: 180px;
+  height: 180px;
+}
+@media (min-width: 1000px) and (max-width: 1100px), (min-width: 700px) and (max-width: 750px) {
+  .SevisPage .SevisValidation .Aside .document .doc1 {
+    width: 260px;
+    height: 260px;
+  }
+  .SevisPage .SevisValidation .Aside .document .doc1 .doc2 {
+    width: 200px;
+    height: 200px;
+  }
+  .SevisPage .SevisValidation .Aside .document .doc1 .doc2 .doc3 {
+    width: 150px;
+    height: 150px;
+  }
+}
+.SevisPage .SevisValidation .ValidationInfo .header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  justify-content: flex-start;
+  gap: 10px;
+  border-bottom: 1px solid;
+  padding-bottom: 8px;
+  margin: 2rem 0 1rem;
+}
+.SevisPage .SevisValidation .ValidationInfo .header p {
+  font-size: 17px;
+  font-weight: 600;
+  color: #151a1d;
+}
+.SevisPage .SevisValidation .ValidationInfo .formType {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 1rem;
+}
+.SevisPage .SevisValidation .ValidationInfo .formType p {
+  color: #17324f;
+}
+@media (min-width: 680px) {
+  .SevisPage .SevisValidation .ValidationInfo .formType {
+    flex-direction: column;
+    align-items: baseline;
+  }
+}
+.SevisPage .SevisValidation .ValidationInfo .form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+  gap: 30px;
+  align-items: flex-start;
+  margin: 1rem 0;
+  align-items: center;
+}
+@media (min-width: 1440px) {
+  .SevisPage .SevisValidation .ValidationInfo .form {
+    gap: 60px;
+  }
+}
+.SevisPage .SevisValidation .ValidationInfo .form .DOB {
+  width: min(300px, 100%);
+}
+.SevisPage .SevisValidation .ValidationInfo .form .DOB .options {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.3125rem;
+  letter-spacing: 0.03em;
+  color: #3a3a3a;
+  width: min(100%, 300px);
+  position: relative;
+  flex-direction: row;
+}
+.SevisPage .PaymentMethod {
+  padding: 0 10%;
+}
+.SevisPage .PaymentMethod .paymentId {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+  margin: 0.7rem 0;
+}
+@media (min-width: 500px) {
+  .SevisPage .PaymentMethod .paymentId {
+    gap: 3rem;
+    justify-content: flex-start;
+  }
+}
+.SevisPage .PaymentMethod .paymentId i {
+  color: #20466f;
+  font-style: normal;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.SevisPage .PaymentMethod .paymentBox {
+  background: #fafcfd;
+  border: 1px solid #e9edf1;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 0 0 1rem;
+}
+.SevisPage .PaymentMethod .paymentBox .CardPayment,
+.SevisPage .PaymentMethod .paymentBox .BankPayment,
+.SevisPage .PaymentMethod .paymentBox .CompleteCardPayment {
+  margin: 1rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+  gap: 30px;
+  align-items: flex-start;
+  align-items: center;
+}
+@media (min-width: 1440px) {
+  .SevisPage .PaymentMethod .paymentBox .CardPayment,
+  .SevisPage .PaymentMethod .paymentBox .BankPayment,
+  .SevisPage .PaymentMethod .paymentBox .CompleteCardPayment {
+    gap: 60px;
+  }
+}
+.SevisPage .PaymentMethod .paymentBox .CardPayment .Svg,
+.SevisPage .PaymentMethod .paymentBox .BankPayment .Svg,
+.SevisPage .PaymentMethod .paymentBox .CompleteCardPayment .Svg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  justify-content: flex-start;
+  gap: 1rem;
+}
+.SevisPage .PaymentMethod .paymentBox .CardPayment .cardForm,
+.SevisPage .PaymentMethod .paymentBox .BankPayment .cardForm,
+.SevisPage .PaymentMethod .paymentBox .CompleteCardPayment .cardForm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+  gap: 30px;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+@media (min-width: 1440px) {
+  .SevisPage .PaymentMethod .paymentBox .CardPayment .cardForm,
+  .SevisPage .PaymentMethod .paymentBox .BankPayment .cardForm,
+  .SevisPage .PaymentMethod .paymentBox .CompleteCardPayment .cardForm {
+    gap: 60px;
+  }
+}
+.SevisPage .PaymentMethod .paymentBox .CardPayment .cardForm div,
+.SevisPage .PaymentMethod .paymentBox .BankPayment .cardForm div,
+.SevisPage .PaymentMethod .paymentBox .CompleteCardPayment .cardForm div {
+  display: flex;
+  gap: 12px;
+  width: min(100%, 300px);
+}
+.SevisPage .PaymentMethod .paymentBox .CardPayment .cardForm .sensitiveCardInfo,
+.SevisPage .PaymentMethod .paymentBox .BankPayment .cardForm .sensitiveCardInfo,
+.SevisPage .PaymentMethod .paymentBox .CompleteCardPayment .cardForm .sensitiveCardInfo {
+  white-space: nowrap;
+  gap: 20px;
+}
+.SevisPage .PaymentMethod .paymentBox .CardPayment .cardForm .sensitiveCardInfo .expiry,
+.SevisPage .PaymentMethod .paymentBox .BankPayment .cardForm .sensitiveCardInfo .expiry,
+.SevisPage .PaymentMethod .paymentBox .CompleteCardPayment .cardForm .sensitiveCardInfo .expiry {
+  flex: 3.5;
+}
+.SevisPage .PaymentMethod .paymentBox .CardPayment .cardForm .sensitiveCardInfo > label,
+.SevisPage .PaymentMethod .paymentBox .BankPayment .cardForm .sensitiveCardInfo > label,
+.SevisPage .PaymentMethod .paymentBox .CompleteCardPayment .cardForm .sensitiveCardInfo > label {
+  flex: 2;
+}
+@media (max-width: 600px) {
+  .SevisPage .PaymentMethod .paymentBox .CardPayment .cardForm .sensitiveCardInfo,
+  .SevisPage .PaymentMethod .paymentBox .BankPayment .cardForm .sensitiveCardInfo,
+  .SevisPage .PaymentMethod .paymentBox .CompleteCardPayment .cardForm .sensitiveCardInfo {
+    flex-direction: column;
+  }
+}
+.SevisPage .PaymentMethod .paymentBox .CardPayment .InfoModal,
+.SevisPage .PaymentMethod .paymentBox .BankPayment .InfoModal,
+.SevisPage .PaymentMethod .paymentBox .CompleteCardPayment .InfoModal {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #b2b4b4;
+}
+.SevisPage .PaymentMethod .paymentBox .CardPayment .InfoModal svg,
+.SevisPage .PaymentMethod .paymentBox .BankPayment .InfoModal svg,
+.SevisPage .PaymentMethod .paymentBox .CompleteCardPayment .InfoModal svg {
+  width: 25px;
+}
+.SevisPage .PaymentMethod .paymentBox .CardPayment .accountBox,
+.SevisPage .PaymentMethod .paymentBox .BankPayment .accountBox,
+.SevisPage .PaymentMethod .paymentBox .CompleteCardPayment .accountBox {
+  border: 2.5px solid #e9edf1;
+  border-radius: 24px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.SevisPage .PaymentMethod .paymentBox .CardPayment .accountBox .box,
+.SevisPage .PaymentMethod .paymentBox .BankPayment .accountBox .box,
+.SevisPage .PaymentMethod .paymentBox .CompleteCardPayment .accountBox .box {
+  max-width: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+  gap: 30px;
+  align-items: flex-start;
+  gap: 12px;
+}
+@media (min-width: 1440px) {
+  .SevisPage .PaymentMethod .paymentBox .CardPayment .accountBox .box,
+  .SevisPage .PaymentMethod .paymentBox .BankPayment .accountBox .box,
+  .SevisPage .PaymentMethod .paymentBox .CompleteCardPayment .accountBox .box {
+    gap: 60px;
+  }
+}
+.SevisPage .PaymentMethod .paymentBox .CardPayment .accountBox .box span,
+.SevisPage .PaymentMethod .paymentBox .BankPayment .accountBox .box span,
+.SevisPage .PaymentMethod .paymentBox .CompleteCardPayment .accountBox .box span {
+  color: #8a8b8b;
+}
+.SevisPage .PaymentMethod .paymentBox .CardPayment .accountBox .box > span,
+.SevisPage .PaymentMethod .paymentBox .BankPayment .accountBox .box > span,
+.SevisPage .PaymentMethod .paymentBox .CompleteCardPayment .accountBox .box > span {
+  text-align: center;
+  width: 100%;
+}
+.SevisPage .PaymentMethod .paymentBox .CardPayment .accountBox .box .Bank,
+.SevisPage .PaymentMethod .paymentBox .BankPayment .accountBox .box .Bank,
+.SevisPage .PaymentMethod .paymentBox .CompleteCardPayment .accountBox .box .Bank {
+  display: flex;
+  width: -moz-fit-content;
+  width: fit-content;
+  gap: 10px;
+  align-items: center;
+}
+.SevisPage .PaymentMethod .paymentBox .CardPayment .accountBox .box .Bank div,
+.SevisPage .PaymentMethod .paymentBox .BankPayment .accountBox .box .Bank div,
+.SevisPage .PaymentMethod .paymentBox .CompleteCardPayment .accountBox .box .Bank div {
+  font-size: 28px;
+  color: #656568;
+}
+.SevisPage .PaymentMethod .paymentBox .CardPayment .accountBox .box .Bank svg,
+.SevisPage .PaymentMethod .paymentBox .BankPayment .accountBox .box .Bank svg,
+.SevisPage .PaymentMethod .paymentBox .CompleteCardPayment .accountBox .box .Bank svg {
+  width: 45.5px;
+  height: 45.5px;
+}
+.SevisPage .PaymentMethod .paymentBox .CardPayment .Details,
+.SevisPage .PaymentMethod .paymentBox .BankPayment .Details,
+.SevisPage .PaymentMethod .paymentBox .CompleteCardPayment .Details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+  gap: 10px;
+}
+.SevisPage .PaymentMethod .paymentBox .CardPayment .Details div,
+.SevisPage .PaymentMethod .paymentBox .BankPayment .Details div,
+.SevisPage .PaymentMethod .paymentBox .CompleteCardPayment .Details div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.SevisPage .PaymentMethod .paymentBox .CardPayment .Details div span,
+.SevisPage .PaymentMethod .paymentBox .BankPayment .Details div span,
+.SevisPage .PaymentMethod .paymentBox .CompleteCardPayment .Details div span {
+  flex: 1;
+}
+.SevisPage .PaymentMethod .paymentBox .CardPayment .Details div span:nth-child(2),
+.SevisPage .PaymentMethod .paymentBox .BankPayment .Details div span:nth-child(2),
+.SevisPage .PaymentMethod .paymentBox .CompleteCardPayment .Details div span:nth-child(2) {
+  text-align: center;
+}
+.SevisPage .PaymentMethod .paymentBox .CardPayment .PaymentDetails,
+.SevisPage .PaymentMethod .paymentBox .CardPayment .PaymentSummary,
+.SevisPage .PaymentMethod .paymentBox .BankPayment .PaymentDetails,
+.SevisPage .PaymentMethod .paymentBox .BankPayment .PaymentSummary,
+.SevisPage .PaymentMethod .paymentBox .CompleteCardPayment .PaymentDetails,
+.SevisPage .PaymentMethod .paymentBox .CompleteCardPayment .PaymentSummary {
+  width: min(400px, 100%);
+  border: 2.5px solid #e9edf1;
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.3rem;
+  padding: 1rem 1.2rem;
+}
+.SevisPage .PaymentMethod .paymentBox .CardPayment .PaymentDetails i,
+.SevisPage .PaymentMethod .paymentBox .CardPayment .PaymentSummary i,
+.SevisPage .PaymentMethod .paymentBox .BankPayment .PaymentDetails i,
+.SevisPage .PaymentMethod .paymentBox .BankPayment .PaymentSummary i,
+.SevisPage .PaymentMethod .paymentBox .CompleteCardPayment .PaymentDetails i,
+.SevisPage .PaymentMethod .paymentBox .CompleteCardPayment .PaymentSummary i {
+  font-style: normal;
+}
+.SevisPage .PaymentMethod .paymentBox .CardPayment .PaymentDetails span,
+.SevisPage .PaymentMethod .paymentBox .CardPayment .PaymentSummary span,
+.SevisPage .PaymentMethod .paymentBox .BankPayment .PaymentDetails span,
+.SevisPage .PaymentMethod .paymentBox .BankPayment .PaymentSummary span,
+.SevisPage .PaymentMethod .paymentBox .CompleteCardPayment .PaymentDetails span,
+.SevisPage .PaymentMethod .paymentBox .CompleteCardPayment .PaymentSummary span {
+  color: #7e7e80;
+}
+.SevisPage .PaymentMethod .paymentBox .CardPayment .PaymentDetails .top,
+.SevisPage .PaymentMethod .paymentBox .CardPayment .PaymentDetails .bottom,
+.SevisPage .PaymentMethod .paymentBox .CardPayment .PaymentSummary .top,
+.SevisPage .PaymentMethod .paymentBox .CardPayment .PaymentSummary .bottom,
+.SevisPage .PaymentMethod .paymentBox .BankPayment .PaymentDetails .top,
+.SevisPage .PaymentMethod .paymentBox .BankPayment .PaymentDetails .bottom,
+.SevisPage .PaymentMethod .paymentBox .BankPayment .PaymentSummary .top,
+.SevisPage .PaymentMethod .paymentBox .BankPayment .PaymentSummary .bottom,
+.SevisPage .PaymentMethod .paymentBox .CompleteCardPayment .PaymentDetails .top,
+.SevisPage .PaymentMethod .paymentBox .CompleteCardPayment .PaymentDetails .bottom,
+.SevisPage .PaymentMethod .paymentBox .CompleteCardPayment .PaymentSummary .top,
+.SevisPage .PaymentMethod .paymentBox .CompleteCardPayment .PaymentSummary .bottom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+}
+.SevisPage .PaymentMethod .paymentBox .CardPayment .PaymentDetails .top span,
+.SevisPage .PaymentMethod .paymentBox .CardPayment .PaymentSummary .top span,
+.SevisPage .PaymentMethod .paymentBox .BankPayment .PaymentDetails .top span,
+.SevisPage .PaymentMethod .paymentBox .BankPayment .PaymentSummary .top span,
+.SevisPage .PaymentMethod .paymentBox .CompleteCardPayment .PaymentDetails .top span,
+.SevisPage .PaymentMethod .paymentBox .CompleteCardPayment .PaymentSummary .top span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.SevisPage .PaymentMethod .paymentBox .CardPayment .PaymentDetails .top i,
+.SevisPage .PaymentMethod .paymentBox .CardPayment .PaymentSummary .top i,
+.SevisPage .PaymentMethod .paymentBox .BankPayment .PaymentDetails .top i,
+.SevisPage .PaymentMethod .paymentBox .BankPayment .PaymentSummary .top i,
+.SevisPage .PaymentMethod .paymentBox .CompleteCardPayment .PaymentDetails .top i,
+.SevisPage .PaymentMethod .paymentBox .CompleteCardPayment .PaymentSummary .top i {
+  text-decoration: underline;
+  color: #20466f;
+  font-weight: 500;
+}
+.SevisPage .PaymentMethod .paymentBox .CardPayment .PaymentDetails .bottom .cardDetails,
+.SevisPage .PaymentMethod .paymentBox .CardPayment .PaymentSummary .bottom .cardDetails,
+.SevisPage .PaymentMethod .paymentBox .BankPayment .PaymentDetails .bottom .cardDetails,
+.SevisPage .PaymentMethod .paymentBox .BankPayment .PaymentSummary .bottom .cardDetails,
+.SevisPage .PaymentMethod .paymentBox .CompleteCardPayment .PaymentDetails .bottom .cardDetails,
+.SevisPage .PaymentMethod .paymentBox .CompleteCardPayment .PaymentSummary .bottom .cardDetails {
+  width: -moz-fit-content;
+  width: fit-content;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.SevisPage .PaymentMethod .paymentBox .CardPayment .PaymentDetails .bottom .cardDetails svg,
+.SevisPage .PaymentMethod .paymentBox .CardPayment .PaymentSummary .bottom .cardDetails svg,
+.SevisPage .PaymentMethod .paymentBox .BankPayment .PaymentDetails .bottom .cardDetails svg,
+.SevisPage .PaymentMethod .paymentBox .BankPayment .PaymentSummary .bottom .cardDetails svg,
+.SevisPage .PaymentMethod .paymentBox .CompleteCardPayment .PaymentDetails .bottom .cardDetails svg,
+.SevisPage .PaymentMethod .paymentBox .CompleteCardPayment .PaymentSummary .bottom .cardDetails svg {
+  width: 50px;
+  height: 30px;
+}
+.SevisPage .PaymentMethod .paymentBox .CardPayment .PaymentDetails .bottom .cardDetails aside,
+.SevisPage .PaymentMethod .paymentBox .CardPayment .PaymentSummary .bottom .cardDetails aside,
+.SevisPage .PaymentMethod .paymentBox .BankPayment .PaymentDetails .bottom .cardDetails aside,
+.SevisPage .PaymentMethod .paymentBox .BankPayment .PaymentSummary .bottom .cardDetails aside,
+.SevisPage .PaymentMethod .paymentBox .CompleteCardPayment .PaymentDetails .bottom .cardDetails aside,
+.SevisPage .PaymentMethod .paymentBox .CompleteCardPayment .PaymentSummary .bottom .cardDetails aside {
+  display: flex;
+  gap: 7px;
+  align-items: center;
+}
+.SevisPage .PaymentMethod .paymentBox .CardPayment .PaymentDetails .bottom .cardDetails aside .Dots,
+.SevisPage .PaymentMethod .paymentBox .CardPayment .PaymentSummary .bottom .cardDetails aside .Dots,
+.SevisPage .PaymentMethod .paymentBox .BankPayment .PaymentDetails .bottom .cardDetails aside .Dots,
+.SevisPage .PaymentMethod .paymentBox .BankPayment .PaymentSummary .bottom .cardDetails aside .Dots,
+.SevisPage .PaymentMethod .paymentBox .CompleteCardPayment .PaymentDetails .bottom .cardDetails aside .Dots,
+.SevisPage .PaymentMethod .paymentBox .CompleteCardPayment .PaymentSummary .bottom .cardDetails aside .Dots {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+.SevisPage .PaymentMethod .paymentBox .CardPayment .PaymentDetails .bottom .cardDetails aside .Dots .dot,
+.SevisPage .PaymentMethod .paymentBox .CardPayment .PaymentSummary .bottom .cardDetails aside .Dots .dot,
+.SevisPage .PaymentMethod .paymentBox .BankPayment .PaymentDetails .bottom .cardDetails aside .Dots .dot,
+.SevisPage .PaymentMethod .paymentBox .BankPayment .PaymentSummary .bottom .cardDetails aside .Dots .dot,
+.SevisPage .PaymentMethod .paymentBox .CompleteCardPayment .PaymentDetails .bottom .cardDetails aside .Dots .dot,
+.SevisPage .PaymentMethod .paymentBox .CompleteCardPayment .PaymentSummary .bottom .cardDetails aside .Dots .dot {
+  width: 5px;
+  height: 5px;
+  background: #86898a;
+  border-radius: 1000px;
+}
+
+.StatusPage {
+  margin: 2rem 0 5rem;
+  padding: 0 10%;
+}
+.StatusPage .IdBox {
+  background: #fafcfd;
+  border: 4px solid #e9edf1;
+  border-radius: 16px;
+  padding: 2rem;
+}
+.StatusPage .IdBox h1 {
+  color: #7e7e80;
+  border-bottom: 1px solid black;
+  margin-bottom: 3rem;
+  padding-bottom: 10px;
+  font-weight: 500;
+  font-size: 1.8rem;
+}
+.StatusPage .IdBox .InputBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 2rem;
+  justify-content: unset;
+}
+.StatusPage .IdBox .InputBox input {
+  height: unset;
+}
+.StatusPage .IdBox .table {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.StatusPage .IdBox .table div {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  align-items: center;
+}
+.StatusPage .IdBox .table p,
+.StatusPage .IdBox .table span {
+  font-size: 1rem;
+}
+@media (max-width: 900px) {
+  .StatusPage .IdBox .table {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+@media (max-width: 700px) {
+  .StatusPage .IdBox h1 {
+    font-size: 1.2rem;
+    padding-bottom: 4px;
+  }
+  .StatusPage .IdBox .InputBox {
+    flex-direction: column;
+  }
+}
+
+.Grid {
+  margin: 30px 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  grid-template-rows: auto;
+}
+.Grid .Item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border: 1.83466px solid #bac6d2;
+  border-radius: 8px;
+  padding: 16px;
+}
+.Grid .Item .top {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.Grid .Item .top p {
+  color: #12273d;
+  font-weight: 600;
+  font-size: 14.9057px;
+  line-height: 17px;
+}
+.Grid .Item span {
+  color: #1d4065;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.Pointer {
+  display: flex;
+  margin-top: 30px;
+  width: 100%;
+  position: relative;
+}
+.Pointer .PointerLine {
+  width: 220px;
+  height: 1px;
+  background: #1d4065;
+  top: -25%;
+  position: relative;
+}
+
+.MobilePointer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  width: 100%;
+  position: relative;
+}
+
+.Point {
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Point .MainPointer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  color: #fff;
+}
+.Point .MainPointer .OuterCircle {
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  border-radius: 50%;
+  width: 35px;
+  overflow: hidden;
+  z-index: 3;
+  height: 35px;
+  position: relative;
+  background: linear-gradient(192.7deg, #152a47 14.55%, #032555 91.2%);
+}
+.Point .MainPointer .OuterCircle .InnerCircle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  outline: 2px solid #fff;
+  background: linear-gradient(192.7deg, #152a47 14.55%, #032555 91.2%);
+}
+.Point .MainPointer p {
+  font-size: 13px;
+  text-align: center;
+  font-weight: 600;
+  color: #12273d;
+  line-height: 1.4;
+}
+
+.Note {
+  padding: 20px 10px 40px;
+  display: flex;
+  flex-direction: column;
+  background: #f6fafb;
+  border: 2.5px solid #bac6d2;
+  border-radius: 8px;
+}
+.Note .top {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.Note .top .lock {
+  width: -moz-max-content;
+  width: max-content;
+  align-self: flex-start;
+}
+.Note .top .lock svg {
+  width: 50px;
+  height: 50px;
+}
+.Note .top h1 {
+  color: #666969;
+}
+.Note p {
+  font-size: 17px;
+  line-height: 1.5;
+  color: #696a6a;
+  font-weight: 500;
+}
+@media (max-width: 700px) {
+  .Note {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .Note .top h1 {
+    font-size: 23px;
+  }
+}/*# sourceMappingURL=payments.module.css.map */

@@ -224,7 +224,9 @@
   border: 1px solid rgba(0, 0, 0, 0.9);
 }
 .Selector .Filters .filter {
-  height: 300px;
+  height: -moz-fit-content;
+  height: fit-content;
+  max-height: 300px;
   overflow-y: auto;
   border-radius: 7px;
   position: absolute;
