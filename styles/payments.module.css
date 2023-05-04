@@ -1044,4 +1044,57 @@
   .Note .top h1 {
     font-size: 23px;
   }
+}
+
+.Pointer2 {
+  display: flex;
+  margin-top: 30px;
+  position: relative;
+}
+.Pointer2 .step {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 20px;
+}
+.Pointer2 .step .OuterCircle {
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  border-radius: 50%;
+  width: 35px;
+  overflow: hidden;
+  z-index: 3;
+  height: 35px;
+  position: relative;
+  background: linear-gradient(192.7deg, #152a47 14.55%, #032555 91.2%);
+}
+.Pointer2 .step .OuterCircle .InnerCircle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  outline: 2px solid #fff;
+  background: linear-gradient(192.7deg, #152a47 14.55%, #032555 91.2%);
+}
+.Pointer2 .step p {
+  font-size: 13px;
+  text-align: center;
+  font-weight: 600;
+  color: #12273d;
+  line-height: 1.4;
+  margin-top: 5px;
+}
+.Pointer2 .line {
+  position: relative;
+  flex-grow: 1;
+  height: 1px;
+  background-color: #ddd;
+  margin-top: 15px;
 }/*# sourceMappingURL=payments.module.css.map */

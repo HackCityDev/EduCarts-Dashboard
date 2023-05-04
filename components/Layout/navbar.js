@@ -21,13 +21,23 @@ export default function Navbar() {
   let isMobile = useMQ("(max-width: 700px)");
   let isDesktop = useMQ("(min-width: 1000px)");
   let router = useRouter();
-  function activeLink(link) {
-    let title = headersUrls.map((headersUrl) => {
-      if (headersUrl.link === link) {
+  function activeLink(route) {
+    let title = headersUrls.find((headersUrl) => {
+      if (route.length > 1) {
+        console.log("Here");
+        let isRoute = router.pathname.startsWith(route);
+        let split = router.pathname.split("/");
+        let pathname = router.pathname.substring(0, split[1].length + 1);
+        let isPath = route === headersUrl.link || headersUrl.link === pathname;
+        if (isRoute && isPath) {
+          return headersUrl.name;
+        }
+      }
+      if (route.length === 1 && router.route === route) {
         return headersUrl.name;
       }
     });
-    return title;
+    return title.name;
   }
   let sidebarRef = useRef();
   useEffect(() => {

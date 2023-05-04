@@ -48,7 +48,7 @@ export default function Sidebar() {
         <div className={styles.Links}>
           {urls.map((url, i) =>
             url.link == null ? (
-              <div className={styles.accountBar}>
+              <div className={styles.accountBar} key={i}>
                 <span
                   onClick={() => setAccountBar(!accountBar)}
                   style={accountBar ? isPath : {}}

@@ -99,12 +99,18 @@ export function SevisValidation({ setState, isMobile }) {
       ),
     },
   ];
+  useEffect(() => {
+    const scrollAnimate = setInterval(() => {
+      window.scrollTo(0, window.scrollY - 10);
+      if (window.scrollY == 0) clearInterval(scrollAnimate);
+    }, 1);
+  }, [localState]);
   return (
     <section className={styles.SevisValidation}>
       {isMobile ? (
         <MobilePointer position={position} index={0} />
       ) : (
-        <Pointer position={position} index={0} />
+        <Pointer2 index={1} position={position} />
       )}
       <section className={styles.Sevis}>
         {localState ? (
@@ -138,13 +144,19 @@ export function PaymentMethod({ setState, isMobile }) {
     { value: "card", label: "Credit/Debit Card" },
     { value: "bank", label: "Bank Transfer" },
   ];
+  useEffect(() => {
+    const scrollAnimate = setInterval(() => {
+      window.scrollTo(0, window.scrollY - 10);
+      if (window.scrollY == 0) clearInterval(scrollAnimate);
+    }, 1);
+  }, [localState]);
   return (
     <section className={styles.PaymentMethod}>
       {" "}
       {isMobile ? (
         <MobilePointer position={position} index={localState ? 2 : 1} />
       ) : (
-        <Pointer position={position} index={localState ? 2 : 1} />
+        <Pointer2 position={position} index={localState ? 3 : 2} />
       )}
       <div className={styles.paymentId}>
         <Span content="Payment ID - EDU2349856" style={{ color: "#7E7E80" }} />
@@ -620,6 +632,63 @@ export function MobilePointer({ position, index }) {
           </div>
           <Paragraphs content={position[index]} />
         </div>
+      </div>
+    </div>
+  );
+}
+
+export function Pointer2({ index, position }) {
+  let CircleStyle = { background: "#696A6A" };
+  let scale = { scale: 0.7 };
+  let setStyle = (i) => {
+    if (index !== i) {
+      return { ...scale, ...CircleStyle };
+    } else {
+      return {};
+    }
+  };
+  let setCircleStyle = (i) => {
+    if (index !== i) {
+      return CircleStyle;
+    } else {
+      return {};
+    }
+  };
+  let setColor = (i) => {
+    if (index === i) {
+      return { color: "#fff" };
+    } else {
+      return {};
+    }
+  };
+
+  return (
+    <div className={styles.Pointer2}>
+      <div className={styles.step}>
+        <div className={styles.OuterCircle} style={setStyle(1)}>
+          <div className={styles.InnerCircle} style={setCircleStyle(1)}>
+            <span style={setColor(1)}>1</span>
+          </div>
+        </div>
+        <Paragraphs content={position[0]} />
+      </div>
+      <div className={styles.line}></div>
+      <div className={styles.step}>
+        <div className={styles.OuterCircle} style={setStyle(2)}>
+          <div className={styles.InnerCircle} style={setCircleStyle(2)}>
+            <span style={setColor(2)}>2</span>
+          </div>
+        </div>
+        <Paragraphs content={position[1]} />
+      </div>
+      <div className={styles.line}></div>
+      <div className={styles.step}>
+        <div className={styles.OuterCircle} style={setStyle(3)}>
+          <div className={styles.InnerCircle} style={setCircleStyle(3)}>
+            <span style={setColor(3)}>3</span>
+          </div>
+        </div>
+        <Paragraphs content={position[2]} />
       </div>
     </div>
   );
