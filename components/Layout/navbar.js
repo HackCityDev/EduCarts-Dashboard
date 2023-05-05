@@ -13,7 +13,7 @@ import Paragraphs from "../General/Paragraphs";
 import HighlightHeader from "../General/HighlightHeader";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
-import Sidebar from "./sidebar";
+import Sidebar, { urls } from "./sidebar";
 
 export default function Navbar() {
   const [openBar, setOpenBar] = useState(false);
@@ -22,9 +22,8 @@ export default function Navbar() {
   let isDesktop = useMQ("(min-width: 1000px)");
   let router = useRouter();
   function activeLink(route) {
-    let title = headersUrls.find((headersUrl) => {
+    let title = urls.find((headersUrl) => {
       if (route.length > 1) {
-        console.log("Here");
         let isRoute = router.pathname.startsWith(route);
         let split = router.pathname.split("/");
         let pathname = router.pathname.substring(0, split[1].length + 1);
@@ -37,7 +36,7 @@ export default function Navbar() {
         return headersUrl.name;
       }
     });
-    return title.name;
+    return title ? title.name : "";
   }
   let sidebarRef = useRef();
   useEffect(() => {
@@ -107,10 +106,7 @@ export default function Navbar() {
     </nav>
   );
 }
-let headersUrls = [
-  { link: "/", name: "Dashboard" },
-  { link: "/payments", name: "Payments" },
-];
+
 export let accountUrls = [
   { link: "/profile", name: "Profile" },
   { link: "/transactions", name: "Transactions" },

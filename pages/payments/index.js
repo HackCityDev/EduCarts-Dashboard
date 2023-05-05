@@ -2,7 +2,7 @@ import Headers from "../../components/General/Headers";
 import useMQ from "../../hooks/useMQ";
 import Paragraphs from "../../components/General/Paragraphs";
 import Span from "../../components/General/Span";
-import styles from "../../styles/payments.module.css";
+import styles from "../../styles/styles.module.css";
 // import { ChatSupportBox } from "../../components/Home";
 import ImageComponent from "../../assets/SVGs/SVGImageComponent";
 import SevisSVG from "../../assets/SVGs/sevis.svg";

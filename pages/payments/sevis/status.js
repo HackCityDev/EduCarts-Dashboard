@@ -8,7 +8,7 @@ import Input from "../../../components/General/Input";
 import Span from "../../../components/General/Span";
 import { gloablButtonStyle } from "../../../components/PaymentsPage/variables";
 import useMQ from "../../../hooks/useMQ";
-import styles from "../../../styles/payments.module.css";
+import styles from "../../../styles/styles.module.css";
 import { useState } from "react";
 import Paragraphs from "../../../components/General/Paragraphs";
 

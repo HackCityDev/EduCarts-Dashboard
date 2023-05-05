@@ -25,28 +25,6 @@
 }
 .SevisPage {
   position: relative;
-  .Header {
-    background-image: url("../assets/sevis.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 100%;
-    padding: 40px General.$leftRight;
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-    div,
-    p {
-      color: #fff;
-      max-width: calc(400px - General.$leftRight);
-    }
-    p {
-      font-size: clamp(14px, 18px, 20px);
-    }
-  }
-  .Options {
-    padding: 0 General.$leftRight;
-    margin: 1rem 0 4rem;
-  }
   .StartSevisPayment {
     .Body {
       margin: 2rem 0 4rem;

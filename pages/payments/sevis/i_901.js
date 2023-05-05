@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import useMQ from "../../../hooks/useMQ";
-import styles from "../../../styles/payments.module.css";
+import styles from "../../../styles/styles.module.css";
 // import { ChatSupportBox } from "../../../components/Home";
 import {
   PaymentMethod,

@@ -14,7 +14,7 @@ import Timer from "../../assets/Timer";
 import Headers from "../General/Headers";
 import Paragraphs from "../General/Paragraphs";
 import Span from "../General/Span";
-import styles from "../../styles/payments.module.css";
+import styles from "../../styles/styles.module.css";
 import Sevis from "../../assets/Sevis";
 import IdeaSVG from "../../assets/SVGs/idea.svg";
 import VisaSVG from "../../assets/SVGs/visa.svg";

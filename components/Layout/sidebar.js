@@ -103,7 +103,7 @@ export default function Sidebar() {
     </div>
   );
 }
-let urls = [
+export let urls = [
   { link: "/", name: "Home" },
   { link: "/inbox", name: "Inbox" },
   { link: "/payments", name: "Payments" },
