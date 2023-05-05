@@ -10,7 +10,7 @@ export default function FAQIndex() {
         paragraph="Some questions you have for us might have
         been answere check them out below"
       />
-      <OptionsElement Options={Options} headers="Customer Support Options" />
+      {/* <OptionsElement Options={Options} headers="Customer Support Options" /> */}
     </main>
   );
 }

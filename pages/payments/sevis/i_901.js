@@ -8,8 +8,9 @@ import {
   StartSevisPayment,
 } from "../../../components/PaymentsPage/Sevis";
 import Modal from "../../../components/Modals/TransactionModal";
-import { HeaderElement, SevisHeader } from ".";
+import { SevisHeader } from ".";
 import Sevis from "../../../assets/Sevis";
+import HeaderElement from "../../../components/Components/HeaderElement";
 
 export default function I_901() {
   const [state, setState] = useState(1);
@@ -33,7 +34,12 @@ export default function I_901() {
   return (
     <main className={styles.SevisPage}>
       {/* <ChatSupportBox /> */}
-      {state === 1 && <HeaderElement />}
+      {state === 1 && (
+        <HeaderElement
+          header="SEVIS FEE"
+          paragraph="We carry out Sevis fee payments to help you focus on other Important school runs"
+        />
+      )}
       {state === 1 && <StartSevisPayment setState={setState} />}
       {state === 2 ||
         (state === 3 && (
