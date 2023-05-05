@@ -1,6 +1,6 @@
-import HeaderElement from "../../components/Components/HeaderElement";
-import OptionsElement from "../../components/Components/OptionsElement";
-import styles from "../../styles/styles.module.css";
+import HeaderElement from "../../../components/Components/HeaderElement";
+import OptionsElement from "../../../components/Components/OptionsElement";
+import styles from "../../../styles/styles.module.css";
 
 export default function FAQIndex() {
   return (
